@@ -3,7 +3,18 @@ header{
     background-color: #c93384;
 }
 
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
 
 .header-h1{
     color: black;
+}
+
+.Navbar{
+    display: flex;
+    gap: 1rem;
 }
