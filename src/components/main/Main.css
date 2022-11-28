@@ -1,8 +1,28 @@
 main{
-  height: 70vh;
+  min-height: 100vh;
   background-color: black;
 }
 
 .main-h1{
   color: #c93384;
+  text-align: center;
+}
+
+.main-h4{
+  color: #c93384;
+  text-align: center;
+}
+
+.carousel-item{
+  height: 100%;
+}
+
+.imgcarusel{
+  height: 100vh;
+  width: 100%;
+  object-fit: contain;
+}
+
+#carouselExampleControls{
+  height: 100%;
 }
