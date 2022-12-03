@@ -1,6 +1,8 @@
 main{
   min-height: 100vh;
   background-color: black;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 .main-h1{
@@ -18,11 +20,24 @@ main{
 }
 
 .imgcarusel{
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   object-fit: contain;
+  margin-top: 15px;
 }
 
 #carouselExampleControls{
   height: 100%;
+}
+
+.mapa{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mapa_h2{
+  color: goldenrod;
 }
