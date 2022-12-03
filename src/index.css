@@ -13,4 +13,7 @@ body {
   margin: 0;
   font-family: 'Roboto Condensed';
   background-color: black;
+  background-image: url('./assets/folleto.png');
+  background-repeat:repeat;
+  background-size: 100px 100px;
 }
