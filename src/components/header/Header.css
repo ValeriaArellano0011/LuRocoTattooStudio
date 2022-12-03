@@ -1,20 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
 header{
     height: 15vh;
-    background-color: #c93384;
-}
-
-.header{
+    background-color: black;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    border-radius: 10px;
 }
 
 .header-h1{
-    color: black;
+    color: palevioletred;
 }
 
 .Navbar{
     display: flex;
     gap: 1rem;
+}
+
+.h1_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo_header{
+    height: 10vh;
+}
+
+.navbar_links{
+    font-family: 'Roboto Condensed';
+    text-decoration: underline;
+    text-decoration-color: black;
+    color: goldenrod;
+}
+
+.navbar_links:hover{
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+    color: goldenrod;
 }
