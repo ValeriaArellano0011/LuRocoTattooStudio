@@ -1,8 +1,48 @@
 footer{
     height: 15vh;
-    background-color: #c93384;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
 }
 
 .footer-h1{
     color: black;
+}
+
+.qr_footer{
+    height: 100%;
+    padding: 10px;
+}
+
+.qr_img{
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.text_footer{
+    height: 100%;
+}
+
+.text_small{
+    color: white;
+    text-align: center;
+}
+
+.footer_Navbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_a{
+    margin-left: 10px;
+    font-size: 2rem;
+    color: palevioletred;
+}
+
+.footer_a:hover{
+    color: gold;
 }
