@@ -6,6 +6,7 @@ import Artistas from './pages/artistas/Artistas'
 import Productos from './pages/productos/Productos'
 import About from './pages/about/About'
 import Contacto from './pages/contacto/Contacto'
+import Cursos from './pages/cursos/Cursos'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path='/productos' element={<Productos/>} />
             <Route path='/nosotrxs' element={<About/>} />
             <Route path='/contacto' element={<Contacto/>} />
+            <Route path='/cursos' element={<Cursos/>} />
           </Routes>
         </Layout>
     </div>
