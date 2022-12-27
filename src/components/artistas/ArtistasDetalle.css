@@ -1,0 +1,23 @@
+.detalle_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.foto_detalle{
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.nombre_detalle{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.descripcion_detalle{
+    text-align: center;
+    color: white;
+}
