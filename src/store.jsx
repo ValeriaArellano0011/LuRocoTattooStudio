@@ -12,7 +12,7 @@ const store = configureStore({
         artistas: ArtistasApi,
         [ArtistasApi.reducerPath] : ArtistasApi.reducer
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(ArtistasApi.middleware)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(ArtistasApi.middleware).concat(ProductosApi.middleware)
 })
 setupListeners(store.dispatch)
 export default store

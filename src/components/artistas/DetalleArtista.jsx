@@ -1,6 +1,5 @@
 import React from 'react'
 import './ArtistasDetalle.css'
-// import {Link as LinkRouter} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useUnArtistaQuery } from '../../features/ArtistasApi'
 

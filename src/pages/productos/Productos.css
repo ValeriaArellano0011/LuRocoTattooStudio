@@ -1,0 +1,25 @@
+.productos_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.productos_h1{
+    text-align: center;
+    color: white;
+}
+
+.productos_input{
+    padding: 5px 25px 5px 2px;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.cards_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
