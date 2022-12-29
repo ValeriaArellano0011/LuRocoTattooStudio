@@ -6,6 +6,7 @@ import LOGO from '../../assets/LOGO2.png'
 const Header = () => {
 
     let Paginas = [
+        {name: 'Home', to: '/'},
         {name: 'Artistas', to: '/artistas'},
         {name: 'Productos', to: '/productos'},
         {name: 'Cursos', to: '/cursos'},
