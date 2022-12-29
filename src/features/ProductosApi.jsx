@@ -10,7 +10,8 @@ const ProductosApi = createApi({
 
     endpoints: (builder) => ({
         todosProductos: builder.query({
-            query: (search) => `/productos/?producto=${search}`
+            query: (search) => `/productos/?producto=${search}`,
+            transformResponse: res => res.response
         })
     })
 })
