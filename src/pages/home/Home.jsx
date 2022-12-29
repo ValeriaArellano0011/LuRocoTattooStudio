@@ -1,10 +1,10 @@
 import React from 'react'
-import Main from '../../components/main/Main'
+import HomeComponente from '../../components/home/HomeComponente'
 
 const Home = () => {
     return (
         <>
-            <Main/>
+            <HomeComponente />
         </>
     )
 }
