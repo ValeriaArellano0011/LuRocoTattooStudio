@@ -2,7 +2,7 @@ import React, { useState, useRef }  from 'react'
 import './Productos.css'
 import { useTodosProductosQuery } from '../../features/ProductosApi'
 import ProductosCard from '../../components/productos/ProductosCard'
-import InputSearch from '../../components/InputSearch'
+import InputSearch from '../../components/inputSearch/InputSearch'
 
 const Productos = () => {
     const [searchValue,setSearchValue] = useState()
