@@ -1,0 +1,147 @@
+main{
+  min-height: 100vh;
+  background-color: black;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.main-h1{
+  color: #c93384;
+  text-align: center;
+}
+
+.main-h4{
+  color: #c93384;
+  text-align: center;
+}
+
+.carousel-item{
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+.imgcarusel{
+  height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  margin-top: 15px;
+}
+
+#carouselExampleControls{
+  height: 100%;
+  border-bottom: 1px solid rgba(58, 58, 58, 0.445);
+}
+
+.mapa{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 1px solid rgba(58, 58, 58, 0.445);
+}
+
+.mapa_h2{
+  color: goldenrod;
+}
+
+.cursos{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-image: url('../../assets/cursos.jpg');
+  transition: .5s;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.cursos:hover{
+  transform: scale(1.1);
+}
+
+.cursos_h2{
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  background-color: rgba(71, 71, 71, 0.568);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.cursos_h2:hover{
+  background-color: rgba(110, 110, 110, 0.568);
+  transition: .3s;
+}
+
+.artistas_home{
+  background-image:url('../../assets/LUROCO2.jpg'); 
+  background-size: cover; 
+  background-repeat:no-repeat;
+  height: 100vh;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+}
+
+
+.artistas_home:hover{
+  transform: scale(1.1);
+}
+
+
+.artistas_h2{
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  background-color: rgba(71, 71, 71, 0.568);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.artistas_h2:hover{
+  background-color: rgba(110, 110, 110, 0.568);
+  transition: .3s;
+}
+
+.separador{
+  border-top: 1px solid rgba(58, 58, 58, 0.445);
+  margin-top: 30px;
+}
+
+.productos{
+  background-image: url('../../assets/productos.jpg');
+  background-size: cover; 
+  background-repeat:no-repeat;
+  height: 100vh;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+}
+
+.productos:hover{
+  transform: scale(1.1);
+}
+
+.productos_h2{
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  background-color: rgba(71, 71, 71, 0.568);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid rgba(110, 110, 110, 0.568);
+}
+
+.productos_h2:hover{
+  background-color: rgba(110, 110, 110, 0.568);
+  transition: .3s;
+}
