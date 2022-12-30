@@ -11,7 +11,7 @@ const Header = () => {
         {name: 'Productos', to: '/productos'},
         {name: 'Cursos', to: '/cursos'},
         {name: 'Sobre nosotrxs', to: '/nosotrxs'},
-        {name: 'Contacto', to: '/contacto'}
+        {name: 'Contacto', to: '/contacto'},
     ]
 
     return (
