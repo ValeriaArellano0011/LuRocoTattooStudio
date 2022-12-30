@@ -5,6 +5,22 @@ main{
   border-radius: 10px;
 }
 
+.prev{
+  transition: .5s;
+}
+
+.prev:hover{
+  transform: scale(1.3);
+}
+
+.next{
+  transition: .5s;
+}
+
+.next:hover{
+  transform: scale(1.3);
+}
+
 .main-h1{
   color: #c93384;
   text-align: center;
