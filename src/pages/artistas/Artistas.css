@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-    /* border-bottom: 1px solid rgba(58, 58, 58, 0.445); */
     transition: .5s;
 }
 
@@ -37,7 +36,7 @@
 }
 
 .mas{
-    background-color: white;
+    background-color: rgba(151, 151, 151, 0.445);
     color: black;
     padding: 15px 25px;
     border-radius: 10px;
