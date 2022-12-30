@@ -1,0 +1,41 @@
+input, textarea{
+    resize: none;
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.contacto_h2{
+    text-align: center;
+    color: white;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.input_contacto{
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn_contacto{
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.btn_contacto:hover{
+    background-color: white;
+    transform: scale(1.1);
+}

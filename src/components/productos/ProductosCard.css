@@ -60,8 +60,10 @@
     border-radius: 10px;
     margin-bottom: 10px;
     font-size: 1.2rem;
+    transition: .5s;
 }
 
 .producto_btn:hover{
     background-color: grey;
+    transform: scale(1.1);
 }

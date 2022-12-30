@@ -21,13 +21,13 @@ const Footer = () => {
                 <LinkRouter to={item.to}  key={item.key} className="navbar_links">{item.name}</LinkRouter>)}
         </div>
 
-        <div>
+        <div  className='qr_footer'>
           <small className='text_small'>LUROCO TATTOO STUDIO ©</small>
-          <a href="https://www.instagram.com/luroco.tattostudio/" className='footer_a'><BsInstagram/></a>
+          <img src={QR} className="qr_img" alt="qr" />
         </div>
 
-        <div className='qr_footer'>
-          <img src={QR} className="qr_img" alt="qr" />
+        <div>
+          <a href="https://www.instagram.com/luroco.tattostudio/" className='footer_a'><BsInstagram/></a>
         </div>
 
     </footer>
