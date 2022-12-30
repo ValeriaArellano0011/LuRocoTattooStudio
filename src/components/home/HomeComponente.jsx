@@ -6,7 +6,6 @@ import TATTOO3 from '../../assets/tatuaje3.jpg'
 import TATTOO4 from '../../assets/tatuaje4.jpg'
 import TATTOO5 from '../../assets/tatuaje5.jpg'
 import { Link as LinkRouter } from 'react-router-dom'
-import ProductosCard from '../productos/ProductosCard'
 
 const Main = () => {
     return (
