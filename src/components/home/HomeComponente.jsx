@@ -1,45 +1,23 @@
 import React from 'react'
 import './HomeComponente.css'
-import TATTOO1 from '../../assets/tatuaje1.jpg'
-import TATTOO2 from '../../assets/tatuaje2.jpg'
-import TATTOO3 from '../../assets/tatuaje3.jpg'
-import TATTOO4 from '../../assets/tatuaje4.jpg'
-import TATTOO5 from '../../assets/tatuaje5.jpg'
+// import TATTOO1 from '../../assets/tatuaje1.jpg'
+// import TATTOO2 from '../../assets/tatuaje2.jpg'
+// import TATTOO3 from '../../assets/tatuaje3.jpg'
+// import TATTOO4 from '../../assets/tatuaje4.jpg'
+// import TATTOO5 from '../../assets/tatuaje5.jpg'
+import VIDEO_HOME from '../../assets/video_home.mp4'
 import { Link as LinkRouter } from 'react-router-dom'
 
 const Main = () => {
     return (
         <main className='container'>
-            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner carrusel">
-                    <div className="carousel-item active">
-                        <img src={TATTOO1} className="d-block w-100 imgcarusel" alt="..." />
-                    </div>
-
-                    <div className="carousel-item">
-                        <img src={TATTOO2} className="d-block w-100 imgcarusel" alt="..." />
-                    </div>
-                    
-                    <div className="carousel-item">
-                        <img src={TATTOO3} className="d-block w-100 imgcarusel" alt="..." />
-                    </div>
-
-                    <div className="carousel-item">
-                        <img src={TATTOO4} className="d-block w-100 imgcarusel" alt="..." />
-                    </div>
-
-                    <div className="carousel-item">
-                        <img src={TATTOO5} className="d-block w-100 imgcarusel" alt="..." />
-                    </div>
-                </div>
-                <button className="carousel-control-prev prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
+            <div>
+                <video id='video' autoPlay loop muted>
+                    <source
+                        src={VIDEO_HOME}
+                        type="video/mp4"
+                        />
+                </video>
             </div>
 
             <div className='artistas_home'>
