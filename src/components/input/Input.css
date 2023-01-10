@@ -1,0 +1,21 @@
+.formulario-input{
+    width: 15vw;
+    text-align: center;
+}
+
+.btn-registro{
+    padding: 15px 20px;
+    border-radius: 20px;
+    transition: .5s;
+    color: black;
+    font-weight: 800;
+}
+
+.btn-registro:hover{
+    transform: scale(1.1);
+}
+
+.formulario-container{
+    margin-top: 50px;
+    width: 100%;
+}
