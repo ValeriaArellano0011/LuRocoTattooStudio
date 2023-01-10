@@ -1,0 +1,30 @@
+.registro_h1{
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.p_linkRouter_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.registrarse_p{
+    color: white;
+}
+
+#registrarse_Link{
+    color: gold;
+    border: 1px solid gold;
+    padding: 20px;
+    border-radius: 15px;
+    transition: .5s;
+}
+
+#registrarse_Link:hover{
+    transform: scale(1.1);
+    background-color: rgb(26, 26, 26);
+}

@@ -14,7 +14,7 @@ const usuariosApi = createApi({
                 url: "/usuarios/registrarse",
                 method: "POST",
                 body: user,
-            })
+            }),
         }),
 
         iniciarSesion: builder.mutation({

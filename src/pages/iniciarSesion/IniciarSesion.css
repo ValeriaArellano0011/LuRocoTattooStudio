@@ -1,0 +1,30 @@
+.iniciarSesion_h1{
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.p_link_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.iniciarSesion_p{
+    color: white;
+}
+
+#linkRouter_iniciarSesion{
+    color: gold;
+    border: 1px solid gold;
+    padding: 20px;
+    border-radius: 15px;
+    transition: .5s;
+}
+
+#linkRouter_iniciarSesion:hover{
+    transform: scale(1.1);
+    background-color: rgb(26, 26, 26);
+}
