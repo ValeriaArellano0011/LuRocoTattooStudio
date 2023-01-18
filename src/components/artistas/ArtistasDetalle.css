@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto+Condensed:wght@300;400&display=swap');
+
 .detalle_container{
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-family: 'Poiret One', cursive;
 }
 
 .foto_detalle{
@@ -15,6 +18,7 @@
     text-align: center;
     color: white;
     font-size: 3rem;
+    font-weight: 800;
 }
 
 .descripcion_detalle{
@@ -27,4 +31,6 @@
     color: white;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 800;
 }
