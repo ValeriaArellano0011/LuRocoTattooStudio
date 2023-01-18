@@ -1,18 +1,29 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query'
-import ProductosSlice from './features/ProductosSlice'
 import ProductosApi from './features/ProductosApi'
 import ArtistasApi from './features/ArtistasApi'
+import TatuajesApi from './features/TatuajesApi'
+import UsuariosApi from './features/UsuariosApi'
+import usuarioSlice from './features/usuarioSlice'
 
 const store = configureStore({
     reducer: {
-        productos: ProductosSlice,
         [ProductosApi.reducerPath] : ProductosApi.reducer,
 
-        artistas: ArtistasApi,
-        [ArtistasApi.reducerPath] : ArtistasApi.reducer
+        [ArtistasApi.reducerPath] : ArtistasApi.reducer,
+
+        [TatuajesApi.reducerPath] : TatuajesApi.reducer,
+
+        [UsuariosApi.reducerPath] : UsuariosApi.reducer,
+        usuario: usuarioSlice
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(ArtistasApi.middleware).concat(ProductosApi.middleware)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        inmutableCheck:false,
+        serializableCheck: false,
+    })
+    .concat(ArtistasApi.middleware)
+    .concat(ProductosApi.middleware)
+    .concat(TatuajesApi.middleware)
+    .concat(UsuariosApi.middleware)
 })
-setupListeners(store.dispatch)
+
 export default store
