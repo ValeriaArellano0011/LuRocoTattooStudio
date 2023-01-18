@@ -29,3 +29,7 @@
     transform: scale(1.1);
     background-color: rgb(26, 26, 26);
 }
+
+.button_google{
+    margin-bottom: 20px;
+}

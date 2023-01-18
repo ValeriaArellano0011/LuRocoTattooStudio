@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Rye&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+
 header{
     height: 15vh;
     background-color: black;
@@ -13,6 +15,7 @@ header{
 .header-h1{
     color: palevioletred;
     text-decoration: none;
+    font-family: 'Rye', cursive;
 }
 
 .Navbar{

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import * as jose from 'jose'
 import { useRegistrarseMutation } from '../../features/UsuariosApi'
 import { useNavigate } from 'react-router-dom'
