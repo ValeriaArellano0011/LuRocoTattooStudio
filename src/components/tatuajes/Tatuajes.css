@@ -1,0 +1,12 @@
+.tatuaje_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.tatuaje_img{
+    width: 20vw;
+    border-radius: 20px;
+}
