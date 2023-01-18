@@ -19,7 +19,7 @@ const usuariosApi = createApi({
 
         iniciarSesion: builder.mutation({
             query: (user, token) => ({
-                url: "/usuarios/inciarsesion",
+                url: "/usuarios/iniciarsesion",
                 method: "POST",
                 body: user,
                 headers: {"Authorization": "Bearer " + token}

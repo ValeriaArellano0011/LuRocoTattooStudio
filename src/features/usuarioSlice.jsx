@@ -8,8 +8,7 @@ export const usuarioSlice = createSlice({
     },
     reducers: {
         logIn: (state) => {
-            state.logged = false
-            state.usuario = {}
+            state.logged = true
         },
         logOut: (state) => {
             state.logged = false
