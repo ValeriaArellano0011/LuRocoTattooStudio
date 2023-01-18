@@ -2,9 +2,10 @@ import React from 'react'
 import './Registrarse.css'
 import Input from '../../components/input/Input'
 import { useRegistrarseMutation } from '../../features/UsuariosApi'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { Link as LinkRouter } from "react-router-dom";
+import RegistrarseGoogle from '../../components/google/RegistrarseGoogle'
 
 const Registrarse = () => {
     const inputArray = [
@@ -67,6 +68,7 @@ const Registrarse = () => {
             <h1 className='registro_h1'>Registro</h1>
             <Input inputsData={inputArray} event={signUserForm} classPage="registrarse"/>
             <div className='p_linkRouter_container'>
+                <RegistrarseGoogle />
                 <p className='registrarse_p'>Ya tenes cuenta?</p>
                 <LinkRouter to="/iniciarsesion"  id='registrarse_Link' style={{textDecoration: 'none'}}>Inicia Sesion!</LinkRouter>
             </div>
