@@ -12,8 +12,8 @@
 body {
   margin: 0;
   font-family: 'Roboto Condensed';
-  background-color: black;
-  background-image: url('./assets/LOGO2.png');
+  background-color: rgb(12, 12, 12);
+  background-image: url('./assets/fondo4.jfif');
   background-repeat:repeat;
-  background-size: 100px 100px;
+  background-size: 300px 300px;
 }
