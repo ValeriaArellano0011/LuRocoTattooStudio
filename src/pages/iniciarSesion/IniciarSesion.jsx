@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './IniciarSesion.css'
 import { useIniciarSesionMutation } from '../../features/UsuariosApi'
 import { useDispatch } from 'react-redux'
-import { setCredentials } from '../../features/usuarioSlice'
+import { logIn, setCredentials } from '../../features/usuarioSlice'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import Input from '../../components/input/Input'
@@ -12,13 +12,13 @@ const IniciarSesion = () => {
 
     const inputArray = [
         {
-            name: "email",
+            nombre: "email",
             type: "email",
             placeholder: "tu_email@email.com",
             value: ""
         },
         {
-            name: "contraseña",
+            nombre: "Contraseña",
             type: "password",
             placeholder: "tucontraseña1234",
             value: ""
@@ -33,7 +33,7 @@ const IniciarSesion = () => {
         if(resSignIn){
             dispatch(setCredentials(resSignIn.response))
         }
-    }, [resSignIn])
+    }, [resSignIn, dispatch])
 
     const signUserForm = (arrayForm) => {
         let inputsForm = arrayForm.filter(element => element.value)
@@ -43,6 +43,8 @@ const IniciarSesion = () => {
         }, {})
         data.from = "formulario";
         userSignIn(data)
+        dispatch(logIn())
+        navigate("/")
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -50,7 +52,6 @@ const IniciarSesion = () => {
             showConfirmButton: true,
             timer: 3000
         })
-        navigate("/")
     }
 
 
