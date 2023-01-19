@@ -1,6 +1,7 @@
 import React, {useRef} from 'react'
 import './Contacto.css'
 import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
 
 
 const Contacto = () => {
@@ -10,8 +11,14 @@ const Contacto = () => {
     const sendEmail = (e) => {
         e.preventDefault();
     
-        emailjs.sendForm('service_6uwz50d', 'template_kip23yg', form.current, '3FlhSFPIm_9WaHCs7')
-        
+        emailjs.sendForm('service_cibjw2q', 'template_fd31qbo', form.current, 'nfLptl2gt2rLSi-u5')
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Mensaje enviado, nos comunicaremos lo antes posible',
+            showConfirmButton: true,
+            timer: 3000
+        })
         e.target.reset()
         };
     return (
