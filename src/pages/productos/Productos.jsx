@@ -18,7 +18,6 @@ const Productos = () => {
 
     return (
         <main className='container productos_main'>
-            <h1 className='productos_h1'>PRODUCTOS</h1>
             <InputSearch searchEl={search} action={handleValue} />
             <div className='cards_container'>
                 {productos?.map((item) => {
