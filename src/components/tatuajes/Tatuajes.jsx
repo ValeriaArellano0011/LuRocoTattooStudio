@@ -12,7 +12,6 @@ const Tatuajes = () => {
         return (
             <div>
                 <img src={item.imagen} alt="tattooimg" className='tatuaje_img'/>
-                <p className='tatuaje_p'>by {item.artista.nombre}</p>
             </div>
         )
     }
