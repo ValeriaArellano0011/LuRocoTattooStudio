@@ -7,6 +7,7 @@ const Tatuajes = () => {
     const id = useParams()
 
     let { data: tatuajes } = useTatuajeArtistaQuery(id)
+    console.log(tatuajes, id)
 
     const tatuajeCard = (item) => {
         return (
