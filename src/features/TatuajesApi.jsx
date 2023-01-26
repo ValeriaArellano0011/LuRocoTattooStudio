@@ -31,7 +31,7 @@ const TatuajesApi = createApi({
         }),
 
         tatuajeArtista: builder.query({
-            query: (id) => (`/tatuajes/?artistas=${id}`),
+            query: (id) => (`tatuajes?artista=${id.id}`),
         })
     })
 })
