@@ -30,7 +30,7 @@ const scrollUp = () => {
 
         <div className='footer_Navbar'>
             {Paginas.map(item =>
-                <LinkRouter to={item.to}  key={item.key} className="navbar_links">{item.name}</LinkRouter>)}
+                <LinkRouter to={item.to}  key={item.name} className="navbar_links">{item.name}</LinkRouter>)}
         </div>
 
         <div  className='qr_footer'>

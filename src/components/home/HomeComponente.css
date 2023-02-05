@@ -54,7 +54,11 @@ main{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-top: 1px solid rgba(58, 58, 58, 0.445);
+}
+
+.iframe{
+  width: 30vw;
+  height: 50vh;
 }
 
 .mapa_h2{
@@ -170,4 +174,61 @@ main{
   margin-top: 1rem;
   object-fit: cover;
   border-radius: 20px;
+}
+
+@media only screen and (max-width: 1024px){
+  main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #video{
+    height: 50vh;
+    width: 80vw;
+  }
+
+  .artistas_home{
+    background-size: cover; 
+    height: 50vh;
+    width: 80vw;
+    align-self: center;
+  }
+
+  .cursos{
+    background-size: cover; 
+    height: 50vh;
+    width: 80vw;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .productos{
+    background-size: cover; 
+    height: 50vh;
+    width: 80vw;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .separador{
+    width: 80vw;
+    border: 1px solid rgba(58, 58, 58, 0.445);
+    margin-top: 30px;
+  }
+
+  .iframe{
+    width: 50vw;
+  }
+
+}
+
+@media only screen and (max-width:500px){
+  .iframe{
+    width: 70vw;
+    height: 30vh;
+  }
+
+
 }
