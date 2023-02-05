@@ -1,11 +1,12 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+require('dotenv').config()
 
 
 const TatuajesApi = createApi({
     reducerPath: "TatuajesApi",
     
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_API_URL
+        baseUrl: 'https://lurocotattooback-production.up.railway.app/'
     }),
     
     endpoints: (builder) => ({
