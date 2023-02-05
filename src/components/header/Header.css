@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Rye&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header{
     height: 15vh;
+    padding: 0 2rem;
     background-color: black;
     margin-bottom: 15px;
     display: flex;
@@ -39,13 +46,28 @@ header{
     text-decoration: underline;
     text-decoration-color: black;
     color: goldenrod;
+    /* transition: .5s; */
 }
 
 .navbar_links:hover{
     text-decoration: underline;
     text-decoration-color: goldenrod;
     color: goldenrod;
+    transform: scale(1.1);
 }
+
+.nav-btn{
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.5rem;
+}
+
 
 .sesion{
     display: flex;
@@ -80,10 +102,128 @@ header{
     transform: scale(1.1);
 }
 
-.navbar_links{
-    transition: .5s;
+@media only screen and (max-width: 1024px){
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .h1_img{
+        width: 45vw;
+        display: flex;
+        justify-content: start;
+    }
+
+    .logo_header{
+        height: 8vh;
+    }
+
+    .header-h1{
+        font-size: 1.5rem;
+    }
+
+    .Navbar{
+        width: 30vw;
+    }
+
+    .navbar_links{
+        font-size: .8rem;
+    }
+
+    .sesion{
+        width: 15vw;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .registrarse{
+        padding: 8px;
+        font-size: .8rem;
+    }
+
+    .iniciar_sesion{
+        padding: 8px;
+        font-size: .8rem;
+    }
+
 }
 
-.navbar_links:hover{
-    transform: scale(1.1);
+
+@media only screen and (max-width: 800px) {
+    .nav-btn{
+        visibility: visible;
+        opacity: 1;
+        margin-left: 10px;
+    }
+
+    .Navbar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        background-color: black;
+        transition: 1s;
+        transform: translateY(-120vh);
+        z-index: 1;
+    }
+
+    header .responsive_nav{
+        transform: none;
+    }
+
+    nav .nav-close-btn{
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .h1_img{
+        width: 55vw;
+        justify-content: center;
+    }
+    
+    .sesion{
+        flex-direction: row;
+        width: 20vw;
+        gap: 1rem;
+    }
+
+    .iniciar_sesion{
+        text-align: center;
+        padding: 2px;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .header-h1{
+        font-size: .7rem;
+    }
+
+    .logo_header{
+        height: 6vh;
+    }
+
+    .nav-btn{
+        font-size: 1rem;
+    }
+    
+    .sesion{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .iniciar_sesion{
+        padding: 8px;
+    }
+
 }
