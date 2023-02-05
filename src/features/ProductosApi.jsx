@@ -5,7 +5,7 @@ const ProductosApi = createApi({
     reducerPath: "ProductosApi",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:4000/"
+        baseUrl: 'https://lurocotattooback-production.up.railway.app/'
     }),
 
     endpoints: (builder) => ({
