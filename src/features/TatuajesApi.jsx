@@ -1,5 +1,4 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-require('dotenv').config()
 
 
 const TatuajesApi = createApi({
