@@ -21,7 +21,7 @@ const Productos = () => {
             <InputSearch searchEl={search} action={handleValue} />
             <div className='cards_container'>
                 {productos?.map((item) => {
-                    return (<ProductosCard key={item.key} data={item}/>)
+                    return (<ProductosCard key={item.id} data={item}/>)
                 })}
             </div>
         </main>
