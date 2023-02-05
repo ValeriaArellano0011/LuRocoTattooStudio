@@ -44,7 +44,7 @@ const IniciarSesionGoogle = (props) => {
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
-            client_id: '965988115349-7kg2jiqead2fpbqmpc1juq1u5f5e1eb8.apps.googleusercontent.com',
+            client_id: '965988115349-g7k6mad6vd5of8rsrqa2oj78hstctcec.apps.googleusercontent.com',
             callback: handleCredentialResponse,
             context: "signin"
         });

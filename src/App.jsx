@@ -12,6 +12,7 @@ import ArtistaDetalle from './pages/artistas/ArtistaDetalle';
 import Registrarse from './pages/registrarse/Registrarse';
 import IniciarSesion from './pages/iniciarSesion/IniciarSesion'
 import ScrollToTop from './components/ScrollToTop';
+require('dotenv').config()
 
 const App = () => {
   return (

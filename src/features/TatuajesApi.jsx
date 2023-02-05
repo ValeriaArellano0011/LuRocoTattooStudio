@@ -5,7 +5,7 @@ const TatuajesApi = createApi({
     reducerPath: "TatuajesApi",
     
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:4000/"
+        baseUrl: process.env.REACT_APP_API_URL
     }),
     
     endpoints: (builder) => ({
