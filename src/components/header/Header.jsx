@@ -35,7 +35,7 @@ const Header = () => {
             </LinkRouter>
             <nav className='Navbar' ref={navRef}>
                 {Paginas.map(item =>
-                    <LinkRouter to={item.to}  key={item.name} className="navbar_links">{item.name}</LinkRouter>)}
+                    <LinkRouter to={item.to}  key={item.name} className="navbar_links" onClick={showNav}>{item.name}</LinkRouter>)}
                     <button onClick={showNav} className="nav-btn nav-close-btn">
                         <FaTimes/>
                     </button>

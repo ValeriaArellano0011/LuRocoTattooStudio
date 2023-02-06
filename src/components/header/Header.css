@@ -206,7 +206,7 @@ header{
 
 @media only screen and (max-width:500px){
     .header-h1{
-        font-size: .7rem;
+        font-size: 1.1rem;
     }
 
     .logo_header{
@@ -223,7 +223,13 @@ header{
     }
 
     .iniciar_sesion{
-        padding: 8px;
+        padding: 7px;
+        font-size: .7rem;
+    }
+
+    .registrarse{
+        padding: 7px;
+        font-size: .7rem;
     }
 
 }

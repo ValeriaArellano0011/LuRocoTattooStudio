@@ -26,3 +26,21 @@
 .InputButton:hover{
     transform: scale(1.1);
 }
+
+@media only screen and (max-width: 1024px){
+    .InputSearch{
+        width: 25vw;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .InputSearch{
+        width: 30vw;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .InputSearch{
+        width: 40vw;
+    }
+}
