@@ -4,7 +4,7 @@ const ArtistasApi = createApi({
     reducerPath: 'ArtistasApi',
 
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://lurocotattooback-production.up.railway.app/'
+        baseUrl: process.env.REACT_APP_API_URL
     }),
 
     endpoints: (builder) => ({
