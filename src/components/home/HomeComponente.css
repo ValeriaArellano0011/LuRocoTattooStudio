@@ -230,5 +230,59 @@ main{
     height: 30vh;
   }
 
+  .artistas_home{
+    background-size: contain; 
+    height: 30vh;
+    width: 80vw;
+    align-self: center;
+  }
+
+  .artistas_h2{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    background-color: rgba(71, 71, 71, 0.568);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .cursos{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 80vw;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .cursos_h2{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    background-color: rgba(71, 71, 71, 0.568);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .productos{
+    background-size: contain; 
+    height: 30vh;
+    width: 80vw;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .productos_h2{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    background-color: rgba(71, 71, 71, 0.568);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid rgba(110, 110, 110, 0.568);
+  }
+
 
 }

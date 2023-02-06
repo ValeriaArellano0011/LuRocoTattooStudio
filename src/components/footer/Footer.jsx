@@ -2,9 +2,9 @@ import React from 'react'
 import './Footer.css'
 import QR from '../../assets/QR.png'
 import {Link as LinkRouter} from 'react-router-dom'
-// import {BsInstagram} from 'react-icons/bs'
 import UP_ARROW from '../../assets/up_arrow.png'
 import IG_LOGO from '../../assets/instagram_logo.png'
+import { SlSocialInstagram } from 'react-icons/sl'
 
 const Footer = () => {
 
@@ -40,7 +40,7 @@ const scrollUp = () => {
 
         <div className='a_btn_container'>
           <a href="https://www.instagram.com/luroco.tattostudio/" className='footer_a'>
-            <img src={IG_LOGO} alt="instagram_logo" className='instagram_logo' />
+            <SlSocialInstagram className='instagram_logo'/>
           </a>
           <button type='button' onClick={scrollUp} className='btn_up_arrow'>
             <img src={UP_ARROW} alt="up_arrow" className='up_arrow'/>

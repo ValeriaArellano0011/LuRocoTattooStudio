@@ -67,3 +67,43 @@
     background-color: grey;
     transform: scale(1.1);
 }
+
+@media only screen and (max-width: 1024px){
+    .card_container{
+        width: 25vw;
+    }
+
+    .producto_nombre{
+        font-size: 1.3rem;
+    }
+
+    .producto_descripcion{
+        text-align: center;
+        font-size: .9rem;
+    }
+
+    .precio_btn{
+        gap: 1rem;
+    }
+
+    .producto_precio{
+        font-size: 1rem;
+    }
+
+    .producto_btn{
+        border: 1px solid white;
+        background-color: rgba(49, 49, 49, 0.404);
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .card_container{
+        width: 35vw;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .card_container{
+        width: 70vw;
+    }
+}

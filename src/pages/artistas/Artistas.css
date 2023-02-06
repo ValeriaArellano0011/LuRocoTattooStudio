@@ -3,11 +3,14 @@
 .artistas-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
 .artistas-card{
     padding: 5rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +42,7 @@
 
 .mas{
     background-color: rgba(151, 151, 151, 0.445);
-    color: black;
+    color: white;
     padding: 15px 25px;
     border-radius: 10px;
     font-size: 1.5rem;
@@ -53,4 +56,44 @@
 .separador{
     border-top: 1px solid rgba(58, 58, 58, 0.445);
     margin-top: 30px;
+}
+
+@media only screen and (max-width: 800px){
+    .artista-nombre{
+        font-size: 2rem;
+    }
+
+    .mas{
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .artista-foto{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .artistas-card{
+        padding: 1rem;
+    }
+
+    .mas-contenedor{
+        width: 40vw;
+    }
+
+    .artista-nombre{
+        font-size: 1.7rem;
+    }
+
+    .mas{
+        padding: 5px;
+        font-size: .7rem;
+        border-radius: 5px;
+    }
+
+    .artista-foto{
+        width: 60vw;
+        margin-left: 10px;
+    }
 }

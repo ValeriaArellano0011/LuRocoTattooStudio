@@ -59,20 +59,16 @@ footer{
     gap: 2rem;
 }
 
-.footer_a{
-    background-color: white;
-    transition: .5s;
-    border-radius: 140px;
-    height: 3.2rem;
-}
-
-.footer_a:hover{
-    border-radius: 200px;
-    transform: scale(1.1);
-}
 
 .instagram_logo{
-    height: 100%;
+    transition: .5s;
+    height: 3.2rem;
+    color: white;
+    font-size: 3.2rem;
+}
+
+.instagram_logo:hover{
+    transform: scale(1.1);
 }
 
 
@@ -98,5 +94,27 @@ footer{
         display: none;
     }
 
+}
 
+@media only screen and (max-width: 500px){
+    .text_small{
+        font-size: 1rem;
+    }
+
+    .qr_img{
+        display: none;
+    }
+
+    .instagram_logo{
+        height: 5vh;
+    }
+
+    .btn_up_arrow{
+        margin-top: 0;
+        height: 5vh;
+    }
+
+    .a_btn_container{
+        gap: 1rem;
+    }
 }

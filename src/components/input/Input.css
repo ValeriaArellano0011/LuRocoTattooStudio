@@ -4,8 +4,8 @@
 }
 
 .btn-registro{
-    padding: 15px 20px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
     transition: .5s;
     color: black;
     font-weight: 800;
@@ -18,4 +18,25 @@
 .formulario-container{
     margin-top: 50px;
     width: 100%;
+}
+
+@media only screen and (max-width: 1024px){
+    .formulario-input{
+        width: 25vw;
+    }
+
+}
+
+@media only screen and (max-width: 800px){
+    .formulario-input{
+        width: 35vw;
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+    .formulario-input{
+        width: 50vw;
+    }
+
 }
