@@ -5,7 +5,7 @@ const TatuajesApi = createApi({
     reducerPath: "TatuajesApi",
     
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://lurocotattooback-production.up.railway.app/'
+        baseUrl: process.env.REACT_APP_API_URL
     }),
     
     endpoints: (builder) => ({
