@@ -4,10 +4,14 @@ import ArtistasApi from './features/ArtistasApi'
 import TatuajesApi from './features/TatuajesApi'
 import UsuariosApi from './features/UsuariosApi'
 import usuarioSlice from './features/usuarioSlice'
+import CarritoApi from "./features/CarritoApi";
+import CarritoSlice from "./features/CarritoSlice";
 
 const store = configureStore({
     reducer: {
         [ProductosApi.reducerPath] : ProductosApi.reducer,
+
+        carrito: CarritoSlice,
 
         [ArtistasApi.reducerPath] : ArtistasApi.reducer,
 
@@ -24,6 +28,7 @@ const store = configureStore({
     .concat(ProductosApi.middleware)
     .concat(TatuajesApi.middleware)
     .concat(UsuariosApi.middleware)
+    .concat(CarritoApi.middleware)
 })
 
 export default store
