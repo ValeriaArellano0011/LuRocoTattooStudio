@@ -10,12 +10,12 @@ const Carrito = () => {
     return (<main className={'container'}>
         <h1>TU CARRITO</h1>
         {!productos.length > 0 ? <p>Aun no tenes productos en tu carrito</p> :
-            productos.length === 1 && productos[0].cantidad === 1 ? <p>TOTAL (1 producto) $ {productos[0].precio}
+            productos.length === 1 && productos[0].cantidad === 1 ? <p>TOTAL (1 producto) $ {new Intl.NumberFormat().format(productos[0].precio)}
                 </p> :
                 <p>TOTAL ({productos
                     && productos.map(e => e.cantidad).reduce((a, b) => a + b)
                 } productos)
-                    $ {productos.map(e => e.precio * e.cantidad).reduce((a, b) => a + b)}
+                    $ { new Intl.NumberFormat().format(productos.map(e => e.precio * e.cantidad).reduce((a, b) => a + b))}
                 </p>}
 
         {
@@ -27,7 +27,7 @@ const Carrito = () => {
                     <div className={"infocarro"}>
                         {elem.nombre}
                         cantidad: {elem.cantidad}
-                        $ {elem.precio * elem.cantidad}
+                        $ {new Intl.NumberFormat().format(elem.precio * elem.cantidad)}
                     </div>
                 </div>
             })
@@ -37,13 +37,13 @@ const Carrito = () => {
             <h2>RESUMEN DEL PEDIDO
             </h2>
             {productos.length === 1 && productos[0].cantidad === 1 ? <div>
-                {<p>1 producto $ {productos[0].precio} </p>}
+                {<p>1 producto $ {new Intl.NumberFormat().format(productos[0].precio)} </p>}
             </div> :
             <div>
                 {productos
                     && productos.map(e => e.cantidad).reduce((a, b) => a + b)
                 } productos
-                $ {productos.map(e => e.precio * e.cantidad).reduce((a, b) => a + b)}
+                $ {new Intl.NumberFormat().format(productos.map(e => e.precio * e.cantidad).reduce((a, b) => a + b))}
             </div>
             }
 

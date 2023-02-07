@@ -39,7 +39,7 @@ const ProductosCard = (props) => {
             </div>
                 <p className='producto_descripcion'>{descripcion}</p>
             <div className='precio_btn'>
-                <h4 className='producto_precio'>$ {precio}</h4>
+                <h4 className='producto_precio'>$ {new Intl.NumberFormat().format(precio)}</h4>
                 <button onClick={handleAddToCart} className='producto_btn'>Agregar al carrito</button>
                 <button onClick={handleRemoveUnit} className='producto_btn'>quitar del carrito</button>
             </div>
