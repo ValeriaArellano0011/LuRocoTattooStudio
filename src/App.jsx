@@ -12,6 +12,7 @@ import ArtistaDetalle from './pages/artistas/ArtistaDetalle';
 import Registrarse from './pages/registrarse/Registrarse';
 import IniciarSesion from './pages/iniciarSesion/IniciarSesion'
 import ScrollToTop from './components/ScrollToTop';
+import Carrito from "./pages/carrito/Carrito";
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home/>} />
             <Route path='/artistas' element={<Artistas/>} />
+            <Route path='/carrito' element={<Carrito/>} />
             <Route path='/artistas/:id' element={<ArtistaDetalle/>}/>
             <Route path='/productos' element={<Productos/>} />
             <Route path='/nosotrxs' element={<About/>} />
