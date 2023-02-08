@@ -3,6 +3,7 @@ import './Header.css'
 import {Link as LinkRouter} from 'react-router-dom'
 import LOGO from '../../assets/LOGO2.png'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { BsCart2 } from 'react-icons/bs'
 
 const Header = () => {
 
@@ -36,6 +37,9 @@ const Header = () => {
             <nav className='Navbar' ref={navRef}>
                 {Paginas.map(item =>
                     <LinkRouter to={item.to}  key={item.name} className="navbar_links" onClick={showNav}>{item.name}</LinkRouter>)}
+                    <LinkRouter to='/carrito'>
+                        <BsCart2 className='carrito_icon'/>
+                    </LinkRouter>
                     <button onClick={showNav} className="nav-btn nav-close-btn">
                         <FaTimes/>
                     </button>
