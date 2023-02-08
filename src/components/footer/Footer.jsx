@@ -1,9 +1,7 @@
 import React from 'react'
 import './Footer.css'
-import QR from '../../assets/QR.png'
 import {Link as LinkRouter} from 'react-router-dom'
 import UP_ARROW from '../../assets/up_arrow.png'
-import IG_LOGO from '../../assets/instagram_logo.png'
 import { SlSocialInstagram } from 'react-icons/sl'
 
 const Footer = () => {
@@ -24,6 +22,8 @@ const scrollUp = () => {
     });
   }
 
+  let date = new Date().getFullYear()
+
 
   return (
     <footer>
@@ -34,8 +34,7 @@ const scrollUp = () => {
         </div>
 
         <div  className='qr_footer'>
-          <small className='text_small'>LUROCO TATTOO STUDIO ©</small>
-          <img src={QR} className="qr_img" alt="qr" />
+          <small className='text_small'>LUROCO TATTOO STUDIO © | { date } </small>
         </div>
 
         <div className='a_btn_container'>
