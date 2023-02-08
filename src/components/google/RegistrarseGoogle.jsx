@@ -35,7 +35,7 @@ const RegistrarseGoogle = () => {
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
-            client_id: "965988115349-g7k6mad6vd5of8rsrqa2oj78hstctcec.apps.googleusercontent.com",
+            client_id: "965988115349-tjr796sf3dr8orjupaa3g4nhpq904rq6.apps.googleusercontent.com",
             callback: handleCredentialsResponse,
             context: 'signup'
         })
