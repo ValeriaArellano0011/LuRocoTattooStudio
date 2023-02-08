@@ -44,6 +44,13 @@ const ProductosCard = (props) => {
 
     const handleRemoveUnit = () => {
         dispatch(removeUnit(_id))
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Producto quitado del carrito`,
+            showConfirmButton: true,
+            timer: 3000
+        })
     }
 
     return (
