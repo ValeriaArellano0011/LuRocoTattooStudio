@@ -37,7 +37,7 @@ const Header = () => {
             <nav className='Navbar' ref={navRef}>
                 {Paginas.map(item =>
                     <LinkRouter to={item.to}  key={item.name} className="navbar_links" onClick={showNav}>{item.name}</LinkRouter>)}
-                    <LinkRouter to='/carrito'>
+                    <LinkRouter to='/carrito' onClick={showNav}>
                         <BsCart2 className='carrito_icon'/>
                     </LinkRouter>
                     <button onClick={showNav} className="nav-btn nav-close-btn">
