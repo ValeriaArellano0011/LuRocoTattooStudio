@@ -176,6 +176,33 @@ main{
   border-radius: 20px;
 }
 
+@media only screen and (max-width: 1600px){
+  #video{
+    width: 60vw;
+  }
+
+  .artistas_home{
+    width: 70vw;
+  }
+
+  .cursos{
+    width: 70vw;
+    height: 80vh;
+  }
+
+  .productos{
+    width: 70vw;
+  }
+
+  .iframe{
+    border-radius: 15px;
+    width: 50vw;
+    height: 50vh;
+  }
+
+}
+
+
 @media only screen and (max-width: 1024px){
   main{
     display: flex;
