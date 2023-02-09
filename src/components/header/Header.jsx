@@ -1,11 +1,16 @@
-import React, { useRef } from 'react'
+import React, {useRef} from 'react'
 import './Header.css'
 import {Link as LinkRouter} from 'react-router-dom'
 import LOGO from '../../assets/LOGO2.png'
-import { FaBars, FaTimes } from 'react-icons/fa'
-import { BsCart2 } from 'react-icons/bs'
+import {FaBars, FaTimes} from 'react-icons/fa'
+import {BsCart2} from 'react-icons/bs'
+import LoginButton from "../../auth0/LoginButton";
+import LogoutButton from "../../auth0/LogoutButton";
+import {useAuth0} from "@auth0/auth0-react";
 
 const Header = () => {
+
+    const {user} = useAuth0();
 
     const navRef = useRef()
 
@@ -36,14 +41,18 @@ const Header = () => {
             </LinkRouter>
             <nav className='Navbar' ref={navRef}>
                 {Paginas.map(item =>
-                    <LinkRouter to={item.to}  key={item.name} className="navbar_links" onClick={showNav}>{item.name}</LinkRouter>)}
-                    <LinkRouter to='/carrito' onClick={showNav}>
-                        <BsCart2 className='carrito_icon'/>
-                    </LinkRouter>
-                    <button onClick={showNav} className="nav-btn nav-close-btn">
-                        <FaTimes/>
-                    </button>
+                    <LinkRouter to={item.to} key={item.name} className="navbar_links"
+                                onClick={showNav}>{item.name}</LinkRouter>)}
+                <LinkRouter to='/carrito' onClick={showNav}>
+                    <BsCart2 className='carrito_icon'/>
+                </LinkRouter>
+                <button onClick={showNav} className="nav-btn nav-close-btn">
+                    <FaTimes/>
+                </button>
             </nav>
+
+            {!user ? <LoginButton/> : <LogoutButton/>}
+            {user && <img src={user.picture} alt=""/>}
 
             <div className='sesion'>
                 <LinkRouter to={'/registrarse'} style={{textDecoration: 'none'}}>
