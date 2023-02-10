@@ -116,6 +116,53 @@ header{
     transform: scale(1.1);
 }
 
+.salir_btn{
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: .5s;
+}
+
+.salir_btn:hover{
+    transform: scale(1.1);
+}
+
+.ingresar_btn{
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: .5s;
+}
+
+.user_picture{
+    height: 8vh;
+    border-radius: 50px;
+}
+
+.btn-secondary{
+    background: transparent;
+    transition: .5s;
+    border: none;
+}
+
+.btn-secondary:hover{
+    background: transparent;
+    transform: scale(1.1);
+}
+
+.dropdown-item{
+    transition: .3s;
+}
+
+.dropdown-item:hover{
+    background-color: black;
+    color: white;
+}
+
+.ingresar_btn:hover{
+    transform: scale(1.1);
+    }
+
 @media only screen and (max-width: 1024px){
     header{
         display: flex;

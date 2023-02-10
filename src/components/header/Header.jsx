@@ -1,16 +1,17 @@
 import React, {useRef} from 'react'
 import './Header.css'
-import {Link as LinkRouter} from 'react-router-dom'
+import {Link, Link as LinkRouter} from 'react-router-dom'
 import LOGO from '../../assets/LOGO2.png'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import {BsCart2} from 'react-icons/bs'
-import LoginButton from "../../auth0/LoginButton";
-import LogoutButton from "../../auth0/LogoutButton";
+import LoginButton from "../auth0/LoginButton";
+import LogoutButton from "../auth0/LogoutButton";
 import {useAuth0} from "@auth0/auth0-react";
 
 const Header = () => {
 
     const {user} = useAuth0();
+    const { logout } = useAuth0();
 
     const navRef = useRef()
 
@@ -51,17 +52,16 @@ const Header = () => {
                 </button>
             </nav>
 
-            {!user ? <LoginButton/> : <LogoutButton/>}
-            {user && <img src={user.picture} alt=""/>}
-
-            <div className='sesion'>
-                <LinkRouter to={'/registrarse'} style={{textDecoration: 'none'}}>
-                    <p className='registrarse'>Registrarse</p>
-                </LinkRouter>
-                <LinkRouter to={'/iniciarsesion'} style={{textDecoration: 'none'}}>
-                    <p className='iniciar_sesion'>Iniciar Sesion</p>
-                </LinkRouter>
-            </div>
+            {!user ? <LoginButton/> : <div class="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src={user.picture} alt="" className='user_picture'/>
+        </button>
+        <ul className="dropdown-menu">
+            <li><Link className="dropdown-item" href="#">Mi Perfil</Link></li>
+            <li><Link className="dropdown-item" href="#">Another action</Link></li>
+            <li><Link className="dropdown-item" onClick={logout}>Salir</Link></li>
+        </ul>
+        </div>}
         </header>
     )
 }
