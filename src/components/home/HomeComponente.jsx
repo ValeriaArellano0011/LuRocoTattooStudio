@@ -23,14 +23,6 @@ const Main = () => {
 
             <div className='separador'></div>
 
-            <div className='cursos'>
-                <LinkRouter to={'/cursos'} style={{textDecoration: 'none'}}>
-                    <h2 className='cursos_h2'>CURSOS</h2>
-                </LinkRouter>
-            </div>
-
-            <div className='separador'></div>
-
             <div className='productos'>
                 <LinkRouter to={'/productos'} style={{textDecoration: 'none'}}>
                     <h2 className='productos_h2'>Nuestros productos</h2>
@@ -39,9 +31,17 @@ const Main = () => {
 
             <div className='separador'></div>
 
+            <div className='cursos'>
+                <LinkRouter to={'/cursos'} style={{textDecoration: 'none'}}>
+                    <h2 className='cursos_h2'>CURSOS</h2>
+                </LinkRouter>
+            </div>
+
+            <div className='separador'></div>
+
             <div className='mapa'>
                 <h2 className='mapa_h2'>Donde encontrarnos 🌎</h2>
-                <iframe className='iframe' title='LuRoco Tattoo Studio' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.255655101707!2d-68.84080898427818!3d-32.89140827642533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0919da344f6f%3A0xaaab5a555c485cc4!2sGaler%C3%ADa%20Piazza%2C%20Av.%20San%20Mart%C3%ADn%201027%2C%20M5500%20Mendoza!5e0!3m2!1ses-419!2sar!4v1669843620340!5m2!1ses-419!2sar" style={{ border: 0 }} referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <iframe className='iframe' title='LuRoco Tattoo Studio' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13400.977086868274!2d-68.8389594!3d-32.8917093!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e09d569d39ec3%3A0xc3908e1ee86c981b!2sLuRoco%20Tattoo%20Studio!5e0!3m2!1ses!2sar!4v1676416111979!5m2!1ses!2sar" referrerpolicy="no-referrer-when-downgrade" style={{ border: 0 }} referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </main>
     )

@@ -258,7 +258,7 @@ main{
   }
 
   .artistas_home{
-    background-size: contain; 
+    background-size: cover; 
     height: 30vh;
     width: 80vw;
     align-self: center;
@@ -275,7 +275,7 @@ main{
   }
 
   .cursos{
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 20vh;
     width: 80vw;
@@ -293,7 +293,7 @@ main{
   }
 
   .productos{
-    background-size: contain; 
+    background-size: cover; 
     height: 30vh;
     width: 80vw;
     align-self: center;
