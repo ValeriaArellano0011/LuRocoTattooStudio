@@ -9,13 +9,13 @@
 
 header{
     height: 15vh;
-    padding: 0 2rem;
+    padding: 0;
     background-color: black;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 10px;
 }
 
@@ -23,6 +23,7 @@ header{
     color: palevioletred;
     text-decoration: none;
     font-family: 'Rye', cursive;
+    margin-left: 30px;
 }
 
 .Navbar{
@@ -70,6 +71,16 @@ header{
     font-size: 1.5rem;
 }
 
+.nav-btn-xpand{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    visibility: hidden;
+    opacity: 0;
+    font-size: .1px;
+}
+
 .carrito_icon{
     font-size: 2.5rem;
     height: 4vh;
@@ -80,40 +91,6 @@ header{
 
 .carrito_icon:hover{
     transform: scale(1.3);
-}
-
-
-.sesion{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
-.registrarse{
-    padding: 10px;
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-    font-weight: 800;
-    transition: .5s;
-}
-
-.registrarse:hover{
-    transform: scale(1.1);
-}
-
-.iniciar_sesion{
-    padding: 10px;
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-    font-weight: 800;
-    transition: .5s;
-}
-
-.iniciar_sesion:hover{
-    transform: scale(1.1);
 }
 
 .salir_btn{
@@ -193,31 +170,27 @@ header{
     .navbar_links{
         font-size: .8rem;
     }
-
-    .sesion{
-        width: 15vw;
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .registrarse{
-        padding: 8px;
-        font-size: .8rem;
-    }
-
-    .iniciar_sesion{
-        padding: 8px;
-        font-size: .8rem;
-    }
-
 }
 
 
 @media only screen and (max-width: 930px) {
+    .header-h1{
+        margin-left: 0;
+    }
+
     .nav-btn{
         visibility: visible;
         opacity: 1;
         margin-left: 10px;
+    }
+
+    .nav-btn-xpand{
+        padding: 5px;
+        cursor: pointer;
+        color: white;
+        visibility: visible;
+        opacity: 1;
+        font-size: 1.5rem;
     }
 
     .Navbar{
@@ -252,16 +225,9 @@ header{
         width: 55vw;
         justify-content: center;
     }
-    
-    .sesion{
-        flex-direction: row;
-        width: 20vw;
-        gap: 1rem;
-    }
 
-    .iniciar_sesion{
-        text-align: center;
-        padding: 2px;
+    .ingresar_btn{
+        font-size: .8rem;
     }
 }
 
@@ -283,14 +249,7 @@ header{
         gap: 0;
     }
 
-    .iniciar_sesion{
-        padding: 7px;
+    .ingresar_btn{
         font-size: .7rem;
     }
-
-    .registrarse{
-        padding: 7px;
-        font-size: .7rem;
-    }
-
 }

@@ -5,13 +5,22 @@ import LOGO from '../../assets/LOGO2.png'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import {BsCart2} from 'react-icons/bs'
 import LoginButton from "../auth0/LoginButton";
-import LogoutButton from "../auth0/LogoutButton";
 import {useAuth0} from "@auth0/auth0-react";
+import Swal from 'sweetalert2';
 
 const Header = () => {
 
     const {user} = useAuth0();
     const { logout } = useAuth0();
+    const logoutAlert = () => {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Sesion cerrada con exito`,
+            showConfirmButton: true,
+            timer: 3000
+        })
+    }
 
     const navRef = useRef()
 
@@ -31,9 +40,6 @@ const Header = () => {
 
     return (
         <header>
-            <button onClick={showNav} className="nav-btn">
-                <FaBars/>
-            </button>
             <LinkRouter to={'/'} style={{textDecoration: 'none'}}>
                 <div className='h1_img'>
                     <h1 className='header-h1'>LUROCO TATTOO STUDIO</h1>
@@ -51,8 +57,7 @@ const Header = () => {
                     <FaTimes/>
                 </button>
             </nav>
-
-            {!user ? <LoginButton/> : <div class="dropdown">
+            {!user ? <LoginButton/> : <div className="dropdown">
         <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src={user.picture} alt="" className='user_picture'/>
         </button>
@@ -62,6 +67,10 @@ const Header = () => {
             <li><Link className="dropdown-item" onClick={logout}>Salir</Link></li>
         </ul>
         </div>}
+
+            <button onClick={showNav} className="nav-btn-xpand">
+                <FaBars/>
+            </button>
         </header>
     )
 }
