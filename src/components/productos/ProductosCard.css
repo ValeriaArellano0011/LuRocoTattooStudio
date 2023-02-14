@@ -38,14 +38,17 @@
 
 .producto_precio{
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    width: 20%;
 }
 
 .precio_btn{
     display: flex;
     justify-content: center;
     align-items: baseline;
+    justify-content: space-between;
     gap: 3rem;
+    width: 100%;
 }
 
 .carrito_btn{
@@ -60,12 +63,13 @@
 }
 
 .producto_btn{
-    padding: 10px;
+    padding: 5px 1px;
     background-color: black;
     color: white;
+    border: 1px solid gray;
     border-radius: 10px;
     margin-bottom: 10px;
-    font-size: 1.1rem;
+    font-size: .9rem;
     transition: .5s;
 }
 
@@ -77,7 +81,15 @@
 @media only screen and (max-width: 1600px){
     .card_container{
         width: 20vw;
-        height: 62vh;
+        height: 65vh;
+    }
+
+    .precio_btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
     }
 }
 
