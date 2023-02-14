@@ -42,6 +42,16 @@ form{
     transform: scale(1.1);
 }
 
+@media only screen and (max-width: 1600px){
+    .input_contacto{
+        width: 20vw;
+    }
+
+    textarea{
+        width: 30vw;
+    }
+}
+
 @media only screen and (max-width: 1024px){
     main{
         justify-content: start;
