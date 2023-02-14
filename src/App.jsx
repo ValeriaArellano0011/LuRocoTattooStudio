@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom';
 import Layout from './layout/Layout'
@@ -13,8 +13,25 @@ import Registrarse from './pages/registrarse/Registrarse';
 import IniciarSesion from './pages/iniciarSesion/IniciarSesion'
 import ScrollToTop from './components/ScrollToTop';
 import Carrito from "./pages/carrito/Carrito";
+import {getUserCart} from "./features/CarritoSlice";
+import {useAuth0} from "@auth0/auth0-react";
+import {useDispatch} from "react-redux";
 
 const App = () => {
+
+
+  const {isAuthenticated, user} = useAuth0()
+  const dispatch = useDispatch()
+
+
+  useEffect(() => {
+
+    isAuthenticated && dispatch(getUserCart(user.email))
+
+    return () => {
+
+    };
+  }, [isAuthenticated]);
 
 
   return (

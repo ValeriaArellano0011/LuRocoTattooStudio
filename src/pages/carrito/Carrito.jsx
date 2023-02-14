@@ -1,11 +1,30 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import './Carrito.css'
+import {useAuth0} from "@auth0/auth0-react";
+import {useEffect} from "react";
+import {getUserCart} from "../../features/CarritoSlice";
 
 
 const Carrito = () => {
 
-    const productos = useSelector(state => state.carrito.productos)
+    const {isAuthenticated, user} = useAuth0()
+    const dispatch = useDispatch()
+    let productos
+    const productosCarrito = useSelector(state => state.carrito.productos)
+    const carritoUsuarioLogeado = useSelector(state => state.carrito.carritoUsuarioLogeado)
+    productos = !isAuthenticated ? productosCarrito : carritoUsuarioLogeado
+
+    useEffect(() => {
+
+        isAuthenticated && dispatch(getUserCart(user.email))
+
+        return () => {
+
+        };
+    }, [isAuthenticated]);
+
+
 
                 // productos.length === 1 && productos[0].cantidad === 1 ? <p className="total">TOTAL (1 producto) = $ {new Intl.NumberFormat().format(productos[0].precio)}
                 //     </p> :
@@ -27,6 +46,7 @@ const Carrito = () => {
                             <div className="producto_nombre">
                                 {elem.nombre}
                             </div>
+                        <p>cantidad: {elem.cantidad}</p>
                             <div className={"infocarro"}>
                                 {/* Cantidad: {elem.cantidad} = */}
                                 $ {new Intl.NumberFormat().format(elem.precio * elem.cantidad)}
