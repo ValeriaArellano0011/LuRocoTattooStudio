@@ -78,7 +78,7 @@ const ProductosCard = (props) => {
                 <h4 className='producto_precio'>$ {new Intl.NumberFormat().format(precio)}</h4>
                 <div className='carrito_btn'>
                     <button onClick={handleAddToCart} className='producto_btn'>Agregar al carrito</button>
-                    <button onClick={handleRemoveUnit} className='producto_btn'>Quitar del carrito</button>
+                    {/*<button onClick={handleRemoveUnit} className='producto_btn'>Quitar del carrito</button>*/}
                 </div>
             </div>
         </div>

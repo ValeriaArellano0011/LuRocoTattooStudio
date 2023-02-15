@@ -36,6 +36,16 @@ export const CarritoSlice = createSlice({
             }
             if (product) product.cantidad--
         },
+        removeProduct: (state, action) => {
+            const product = state.productos.find(e => e._id ===action.payload)
+            if (product){
+                const index = state.productos.indexOf(product)
+                state.productos.splice(index, 1)
+            }
+        },
+        clearCart: (state, action) => {
+            state.productos = []
+        }
     },
     extraReducers: {
         [persistCart.pending](state) {
@@ -58,5 +68,5 @@ export const CarritoSlice = createSlice({
     }
 })
 
-export const {addToCart, addUnit, removeUnit} = CarritoSlice.actions
+export const {addToCart, addUnit, removeUnit, removeProduct, clearCart} = CarritoSlice.actions
 export default CarritoSlice.reducer
