@@ -1,18 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './ProductosCard.css'
 import {useDispatch, useSelector} from "react-redux";
-import {addToCart, addUnit, removeUnit} from "../../features/CarritoSlice";
+import {addToCart, addUnit, persistCart, removeUnit} from "../../features/CarritoSlice";
 import Swal from 'sweetalert2';
+import {useAuth0} from "@auth0/auth0-react";
 
 const ProductosCard = (props) => {
 
-    let { _id, nombre, imagen, descripcion, precio } = props.data
+    let {_id, nombre, imagen, descripcion, precio} = props.data
+    const {isAuthenticated, user} = useAuth0()
     const dispatch = useDispatch()
     const productosCarrito = useSelector(state => state.carrito.productos)
 
 
-    const handleAddToCart = () => {
 
+
+    const handleAddToCart = () => {
 
         //Compruebo si existe el producto en el carrito
         const isProductoExistenteEnCarrito = productosCarrito.find(e => e._id === _id)
@@ -20,7 +23,7 @@ const ProductosCard = (props) => {
 
         // si no existe lo agrego al carro
         if (!isProductoExistenteEnCarrito) {
-            dispatch(addToCart({ nombre, imagen, descripcion, precio, _id, cantidad: 1 }))
+            dispatch(addToCart({nombre, imagen, descripcion, precio, _id, cantidad: 1}))
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -30,8 +33,8 @@ const ProductosCard = (props) => {
             })
 
 
-        // si existe le agrego unicamente una unidad
-        }else dispatch(addUnit(_id))
+            // si existe le agrego unicamente una unidad
+        } else dispatch(addUnit(_id))
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -39,6 +42,13 @@ const ProductosCard = (props) => {
             showConfirmButton: true,
             timer: 3000
         })
+
+        // if (isAuthenticated) {
+        //
+        //     console.log(productosCarrito)
+        //
+        //     // dispatch(persistCart(user.email))
+        // }
 
     }
 
@@ -51,20 +61,24 @@ const ProductosCard = (props) => {
             showConfirmButton: true,
             timer: 3000
         })
+
+        // if (isAuthenticated){
+        //     dispatch(persistCart(user.email))
+        // }
     }
 
     return (
         <div className='card_container'>
             <div className='imagen_nombre'>
-                <img src={imagen} alt={nombre} className='producto_img' />
+                <img src={imagen} alt={nombre} className='producto_img'/>
                 <h4 className='producto_nombre'>{nombre}</h4>
             </div>
-                <p className='producto_descripcion'>{descripcion}</p>
+            <p className='producto_descripcion'>{descripcion}</p>
             <div className='precio_btn'>
                 <h4 className='producto_precio'>$ {new Intl.NumberFormat().format(precio)}</h4>
                 <div className='carrito_btn'>
                     <button onClick={handleAddToCart} className='producto_btn'>Agregar al carrito</button>
-                    <button onClick={handleRemoveUnit} className='producto_btn'>Quitar del carrito</button>
+                    {/*<button onClick={handleRemoveUnit} className='producto_btn'>Quitar del carrito</button>*/}
                 </div>
             </div>
         </div>
