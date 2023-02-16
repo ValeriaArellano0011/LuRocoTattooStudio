@@ -26,10 +26,10 @@ const Contacto = () => {
             <h2 className='contacto_h2'>Contactanos</h2>
             <div>
                 <form ref={form} onSubmit={sendEmail}>
-                    <input type="text" className='input_contacto' name='name' placeholder='Cosme' required/>
-                    <input type="text" className='input_contacto' name='lastName' placeholder='Fulanito' required />
-                    <input type="text" className='input_contacto' name='email' placeholder='cosmefulanito@algo.com' required/>
-                    <textarea name="message" cols="30" rows="10" placeholder='Homero? Ay, quien es Homero? Mi nombre es Cosme Fulanito...' required></textarea>
+                    <input type="text" className='input_contacto' name='name' placeholder='Nombre' required/>
+                    <input type="text" className='input_contacto' name='lastName' placeholder='Apellido' required />
+                    <input type="text" className='input_contacto' name='email' placeholder='tuemail@algo.com' required/>
+                    <textarea name="message" cols="30" rows="10" placeholder='Tu mensaje acá...' required></textarea>
                     <button type='submit' className='btn_contacto'>Enviar</button>
                 </form>
             </div>

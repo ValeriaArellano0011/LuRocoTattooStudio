@@ -1,6 +1,7 @@
-input, textarea{
+textarea{
     resize: none;
-    width: 50%;
+    width: 25vw;
+    height: 30vh;
     padding: 10px;
     border-radius: 10px;
 }
@@ -23,7 +24,8 @@ form{
 }
 
 .input_contacto{
-    width: 20%;
+    resize: none;
+    width: 20vw;
     padding: 10px;
     border-radius: 10px;
 }

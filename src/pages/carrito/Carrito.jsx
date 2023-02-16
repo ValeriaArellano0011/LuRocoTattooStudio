@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlineArrowRight, AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
+import {RxCross2} from 'react-icons/rx'
 import './Carrito.css'
 import {useAuth0} from "@auth0/auth0-react";
 import {useEffect} from "react";
@@ -52,22 +53,21 @@ const Carrito = () => {
     return (
         <main className={'container'}>
             <h1 className="carrito_h1">TU CARRITO</h1>
-            {!productos.length > 0 ? <p className="carrito_p">Aun no tenes productos en tu carrito</p> :
-                <button onClick={() => {dispatch(clearCart())}} >Limpiar Carro</button>}
+            {!productos.length > 0 ? <p className="carrito_p">Aun no tenes productos en tu carrito</p> : null}
 
             {
                 productos.map(elem => {
                     return <div className={"carrito_producto"}>
-                        <button onClick={() => {dispatch(removeProduct(elem._id))} } >X</button>
+                        <button onClick={() => {dispatch(removeProduct(elem._id))} } className='cross_btn'><RxCross2/></button>
                             <img src={elem.imagen} width={80} alt="producto_carrito" className="producto_imagen"/>
                             <div className="producto_nombre">
                                 {elem.nombre}
                             </div>
-                        <div>
-                            cantidad:
-                            <button onClick={() => {dispatch(removeUnit(elem._id))}} >-</button>
-                            {elem.cantidad}
-                            <button onClick={() => {dispatch(addUnit(elem._id))}} >+</button>
+                        <div className="cantidad_container">
+                            <p className="p_cantidad">cantidad:</p>
+                            <div className="cantidad_nmr">{elem.cantidad}</div>
+                            <button onClick={() => {dispatch(removeUnit(elem._id))}} className='minus_btn'><AiOutlineMinusCircle/></button>
+                            <button onClick={() => {dispatch(addUnit(elem._id))}} className='plus_btn'><AiOutlinePlusCircle/></button>
                         </div>
                             <div className={"infocarro"}>
                                 {/* Cantidad: {elem.cantidad} = */}
@@ -89,6 +89,7 @@ const Carrito = () => {
                 </div>
                 }
 
+                <button onClick={() => {dispatch(clearCart())}} className='limpiar_carrito'>Limpiar Carrtio</button>
                 <button className="carrito_btn">FINALIZAR COMPRA <AiOutlineArrowRight/></button>
             </div>}
         </main>

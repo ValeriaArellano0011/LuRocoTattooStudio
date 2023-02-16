@@ -27,14 +27,18 @@ main{
     border: 1px solid gray;
     padding: 10px;
     border-radius: 10px;
-    height: 40vh;
-    width: 10vw;
+    height: 60vh;
+    width: 20vw;
+}
+
+.carrito_producto:hover{
+    background-color: rgb(24, 24, 24);
 }
 
 .producto_imagen{
     border-radius: 10px;
     height: 100%;
-    width: 85%;
+    width: 65%;
     object-fit: cover;
 }
 
@@ -77,9 +81,79 @@ main{
     transform: scale(1.1);
 }
 
+.cantidad_container{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.limpiar_carrito{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: .5s;
+    margin-bottom: 10px;
+}
+
+.limpiar_carrito:hover{
+    transform: scale(1.1);
+}
+
+.p_cantidad{
+    color: white
+}
+
+.cantidad_nmr{
+    color: white;
+}
+
+.minus_btn{
+    background: transparent;
+    color: white;
+    font-size: 1.2rem;
+    transition: .5s;
+}
+
+.minus_btn:hover{
+    transform: scale(1.2);
+}
+
+.plus_btn{
+    background: transparent;
+    color: white;
+    font-size: 1.2rem;
+    transition: .5s;
+}
+
+.plus_btn:hover{
+    transform: scale(1.2);
+}
+
+.cross_btn{
+    background: transparent;
+    color: white;
+    font-size: 1.2rem;
+    align-self: flex-end;
+    transition: .5s;
+}
+
+.cross_btn:hover{
+    transform: scale(1.5);
+}
+
+@media only screen and (max-width: 1024px){
+    .carrito_producto{
+        width: 30vw;
+        height: 65vh;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .carrito_producto{
-        width: 20vw;
+        width: 30vw;
+        height: 67vh;
     }
 }
 
@@ -87,6 +161,6 @@ main{
 @media only screen and (max-width: 500px) {
     .carrito_producto{
         width: 50vw;
-        height: 40vh;
+        height: 65vh;
     }
 }

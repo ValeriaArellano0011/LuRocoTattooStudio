@@ -6,7 +6,8 @@ const CarritoApi = createApi({
     reducerPath: "CarritoApi",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://lurocotattooback-production.up.railway.app/'
+        // baseUrl: 'https://lurocotattooback-production.up.railway.app/'
+        baseUrl: 'http://localhost:4000'
         // baseUrl: process.env.REACT_APP_API_URL
     }),
 
