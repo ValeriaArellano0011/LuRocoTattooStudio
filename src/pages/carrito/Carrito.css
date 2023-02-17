@@ -160,7 +160,7 @@ main{
 
 @media only screen and (max-width: 500px) {
     .carrito_producto{
-        width: 50vw;
-        height: 65vh;
+        width: 70vw;
+        height: 60vh;
     }
 }

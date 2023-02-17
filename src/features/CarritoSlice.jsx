@@ -3,7 +3,9 @@ import axios from 'axios';
 
 
 export const persistCart = createAsyncThunk('carro/persistCart', async (data) => {
-    return (await axios.post(`${process.env.REACT_APP_API_URL}/carro`, data)).data
+    // const response = await axios.post(`${'http://localhost:4000'}/carro`, data)
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/carro`, data)
+    return response.data
 
 })
 export const getUserCart = createAsyncThunk('carro/getUserCart', async (data) => {
@@ -61,8 +63,9 @@ export const CarritoSlice = createSlice({
         },
 
 
-        [persistCart.rejected](state) {
+        [persistCart.rejected](state, action) {
             state.status = "rejected";
+            console.log(action)
         }
     }
 })

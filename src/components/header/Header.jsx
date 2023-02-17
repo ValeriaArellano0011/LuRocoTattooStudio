@@ -62,8 +62,7 @@ const Header = () => {
             <img src={user.picture} alt="" className='user_picture'/>
         </button>
         <ul className="dropdown-menu">
-            <li><Link className="dropdown-item" href="#">Mi Perfil</Link></li>
-            <li><Link className="dropdown-item" href="#">Another action</Link></li>
+            <li><Link className="dropdown-item" to={'./perfil'}>Mi Perfil</Link></li>
             <li><Link className="dropdown-item" onClick={logout}>Salir</Link></li>
         </ul>
         </div>}

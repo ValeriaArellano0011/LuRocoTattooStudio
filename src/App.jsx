@@ -9,10 +9,9 @@ import About from './pages/about/About'
 import Contacto from './pages/contacto/Contacto'
 import Cursos from './pages/cursos/Cursos'
 import ArtistaDetalle from './pages/artistas/ArtistaDetalle';
-import Registrarse from './pages/registrarse/Registrarse';
-import IniciarSesion from './pages/iniciarSesion/IniciarSesion'
 import ScrollToTop from './components/ScrollToTop';
 import Carrito from "./pages/carrito/Carrito";
+import UserProfile from './pages/userProfile/UserProfile';
 import {getUserCart} from "./features/CarritoSlice";
 import {useAuth0} from "@auth0/auth0-react";
 import {useDispatch} from "react-redux";
@@ -48,8 +47,7 @@ const App = () => {
             <Route path='/nosotrxs' element={<About/>} />
             <Route path='/contacto' element={<Contacto/>} />
             <Route path='/cursos' element={<Cursos/>} />
-            <Route path='/registrarse' element={<Registrarse/>} />
-            <Route path='/iniciarsesion' element={<IniciarSesion/>} />
+            <Route path='/perfil' element={<UserProfile/>}/>
           </Routes>
         </Layout>
     </BrowserRouter>
