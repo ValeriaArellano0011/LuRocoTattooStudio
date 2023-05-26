@@ -1,0 +1,44 @@
+form{
+    height: 70%;
+    overflow: auto;
+}
+
+.multiselector-hours{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.hour-selected{
+    background-color: gold;
+    width: min-content;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.hour-to-select{
+    width: min-content;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+.form-input{
+    border-radius: 7px;
+    border: 1px solid black;
+}
+.accept-btn{
+    background-color: transparent;
+    border-radius: 15px;
+    color: black;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.accept-btn:hover{
+    background-color: rgb(95, 95, 95);
+    color: white;
+}

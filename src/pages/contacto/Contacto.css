@@ -1,3 +1,7 @@
+.container-contact{
+    padding-top: 10rem;
+}
+
 textarea{
     resize: none;
     width: 25vw;

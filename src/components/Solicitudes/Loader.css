@@ -1,0 +1,16 @@
+.loaderPending {
+    animation: spin 1s infinite alternate
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+      scale: .8;
+      opacity: .5;
+    }
+    to {
+      transform: rotate(360deg);
+      scale: 1;
+      opacity: 1;
+    }
+}

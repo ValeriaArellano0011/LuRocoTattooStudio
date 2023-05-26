@@ -8,15 +8,17 @@
 }
 
 header{
-    height: 15vh;
+    height: 7rem;
+    width: 100%;
     padding: 0;
-    background-color: black;
-    margin-bottom: 15px;
+    background: linear-gradient(to top, rgba(72, 72, 72, 0) 20% , #000000 120%);
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
-    border-radius: 10px;
+    position: fixed;
+    z-index: 999;
 }
 
 .header-h1{
@@ -45,11 +47,12 @@ header{
 }
 
 .navbar_links{
-    font-family: 'Roboto Condensed';
+    font-family: 'Poppins', sans-serif;
     text-decoration: underline;
     text-decoration-color: black;
     color: goldenrod;
-    /* transition: .5s; */
+    font-size: 14px;
+    font-weight: bolder;
 }
 
 .navbar_links:hover{
@@ -152,7 +155,7 @@ header{
     .h1_img{
         width: 45vw;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
     }
 
     .logo_header{

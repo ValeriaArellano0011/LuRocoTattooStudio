@@ -1,24 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Tatuajes.css'
 import { useParams } from 'react-router-dom'
 import { useTatuajeArtistaQuery } from '../../features/TatuajesApi'
+import { useDispatch, useSelector } from 'react-redux'
+import { getJobs, resetJobs } from '../../redux/actions'
 
-const Tatuajes = () => {
-    const id = useParams()
+const Tatuajes = ({artistaId}) => {
+    const trabajos = useSelector(state => state.trabajos)
+    const dispatch = useDispatch()
 
-    let { data: tatuajes } = useTatuajeArtistaQuery(id)
-    console.log(tatuajes, id)
+    useEffect(() => {
+        dispatch(resetJobs())
+    },[dispatch])
 
-    const tatuajeCard = (item) => {
-        return (
-            <div>
-                <img src={item.imagen} alt="tattooimg" className='tatuaje_img'/>
-            </div>
-        )
-    }
+    useEffect(() => {
+        dispatch(getJobs(artistaId))
+    },[dispatch])
+
     return (
         <div className='tatuaje_container'>
-            {tatuajes?.response?.map(tatuajeCard)}
+            {trabajos?.files?.map((e, index)=>{
+                return (
+                    <div id='imgJobsCanvas'>
+                        <div className='imgJobsCont' id='imgJobsCont'>
+                            <img src={`https://drive.google.com/uc?id=${e}`} width='250px' loading='lazy' alt={`tattoo${index}`} />
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     )
 }

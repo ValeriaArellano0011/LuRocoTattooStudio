@@ -7,65 +7,64 @@ import {useAuth0} from "@auth0/auth0-react";
 
 const ProductosCard = (props) => {
 
-    let {_id, nombre, imagen, descripcion, precio} = props.data
-    const {isAuthenticated, user} = useAuth0()
+    let {_id, nombre, imagen, descripcion, precio, stock} = props.data
     const dispatch = useDispatch()
-    const productosCarrito = useSelector(state => state.carrito.productos)
+    //const productosCarrito = useSelector(state => state.carrito.productos)
 
 
 
 
-    const handleAddToCart = () => {
+    // const handleAddToCart = () => {
 
-        //Compruebo si existe el producto en el carrito
-        const isProductoExistenteEnCarrito = productosCarrito.find(e => e._id === _id)
-
-
-        // si no existe lo agrego al carro
-        if (!isProductoExistenteEnCarrito) {
-            dispatch(addToCart({nombre, imagen, descripcion, precio, _id, cantidad: 1}))
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: `Producto agregado al carrito`,
-                showConfirmButton: true,
-                timer: 3000
-            })
+    //     //Compruebo si existe el producto en el carrito
+    //     const isProductoExistenteEnCarrito = productosCarrito.find(e => e._id === _id)
 
 
-            // si existe le agrego unicamente una unidad
-        } else dispatch(addUnit(_id))
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `Producto agregado al carrito`,
-            showConfirmButton: true,
-            timer: 3000
-        })
+    //     // si no existe lo agrego al carro
+    //     if (!isProductoExistenteEnCarrito) {
+    //         dispatch(addToCart({nombre, imagen, descripcion, precio, _id, cantidad: 1}))
+    //         Swal.fire({
+    //             position: 'top-end',
+    //             icon: 'success',
+    //             title: `Producto agregado al carrito`,
+    //             showConfirmButton: true,
+    //             timer: 3000
+    //         })
 
-        // if (isAuthenticated) {
-        //
-        //     console.log(productosCarrito)
-        //
-        //     // dispatch(persistCart(user.email))
-        // }
 
-    }
+    //         // si existe le agrego unicamente una unidad
+    //     } else dispatch(addUnit(_id))
+    //     Swal.fire({
+    //         position: 'top-end',
+    //         icon: 'success',
+    //         title: `Producto agregado al carrito`,
+    //         showConfirmButton: true,
+    //         timer: 3000
+    //     })
 
-    const handleRemoveUnit = () => {
-        dispatch(removeUnit(_id))
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `Producto quitado del carrito`,
-            showConfirmButton: true,
-            timer: 3000
-        })
+    //     // if (isAuthenticated) {
+    //     //
+    //     //     console.log(productosCarrito)
+    //     //
+    //     //     // dispatch(persistCart(user.email))
+    //     // }
 
-        // if (isAuthenticated){
-        //     dispatch(persistCart(user.email))
-        // }
-    }
+    // }
+
+    // const handleRemoveUnit = () => {
+    //     dispatch(removeUnit(_id))
+    //     Swal.fire({
+    //         position: 'top-end',
+    //         icon: 'success',
+    //         title: `Producto quitado del carrito`,
+    //         showConfirmButton: true,
+    //         timer: 3000
+    //     })
+
+    //     // if (isAuthenticated){
+    //     //     dispatch(persistCart(user.email))
+    //     // }
+    // }
 
     return (
         <div className='card_container'>
@@ -77,7 +76,7 @@ const ProductosCard = (props) => {
             <div className='precio_btn'>
                 <h4 className='producto_precio'>$ {new Intl.NumberFormat().format(precio)}</h4>
                 <div className='carrito_btn'>
-                    <button onClick={handleAddToCart} className='producto_btn'>Agregar al carrito</button>
+                    <button  className='producto_btn'>Agregar al carrito</button>
                     {/*<button onClick={handleRemoveUnit} className='producto_btn'>Quitar del carrito</button>*/}
                 </div>
             </div>

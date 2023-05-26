@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto+Condensed:wght@300;400&display=swap');
 
 .artistas-container{
+    padding-top: 7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

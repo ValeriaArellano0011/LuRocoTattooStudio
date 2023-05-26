@@ -4,38 +4,54 @@ import VIDEO_HOME from '../../assets/video_home.mp4'
 import { Link as LinkRouter } from 'react-router-dom'
 
 const Main = () => {
+    function d(e) { return document.querySelector(e)}
     return (
         <main className='container'>
-            <div>
-                <video id='video' autoPlay loop muted>
-                    <source
-                        src={VIDEO_HOME}
-                        type="video/mp4"
-                        />
+            <div className='video-container'>
+                <div className='video-canvas'>
+                    <button>ASD</button>
+                </div>
+                <video className='' id='video' autoPlay loop muted>
+                    <source src={VIDEO_HOME} type="video/mp4"/>
                 </video>
             </div>
 
-            <div className='artistas_home'>
-                <LinkRouter to={'/artistas'} style={{textDecoration: 'none'}}>
-                    <h2 className='artistas_h2'>Nuestrxs Artistas</h2>
-                </LinkRouter>
-            </div>
+            <ul className='flex-home'>
+                <div className='img_container'>
+                    <div className='artistas_home'>
+                        <LinkRouter to={'/artistas'} style={{textDecoration: 'none'}}>
+                            <h2 className='artistas_h2' 
+                                onMouseEnter={()=>{return d(".artistas_home").style.backgroundSize='150%'}}
+                                onMouseLeave={()=>{return d(".artistas_home").style.backgroundSize='120%'}}                            
+                            >Nuestrxs Artistas</h2>
+                        </LinkRouter>
+                    </div>
+                </div>
 
-            <div className='separador'></div>
+                <div className='separador'></div>
+                <div className='img_container'>
+                    <div className='productos'>
+                        <LinkRouter to={'/productos'} style={{textDecoration: 'none'}}>
+                            <h2 className='productos_h2'
+                                onMouseEnter={()=>{return d(".productos").style.backgroundSize='150%'}}
+                                onMouseLeave={()=>{return d(".productos").style.backgroundSize='120%'}}                            
+                            >Nuestros productos</h2>
+                        </LinkRouter>
+                    </div>
+                </div>
+                <div className='separador'></div>
 
-            <div className='productos'>
-                <LinkRouter to={'/productos'} style={{textDecoration: 'none'}}>
-                    <h2 className='productos_h2'>Nuestros productos</h2>
-                </LinkRouter>
-            </div>
-
-            <div className='separador'></div>
-
-            <div className='cursos'>
-                <LinkRouter to={'/cursos'} style={{textDecoration: 'none'}}>
-                    <h2 className='cursos_h2'>CURSOS</h2>
-                </LinkRouter>
-            </div>
+                <div className='img_container'>
+                    <div className='cursos'>
+                        <LinkRouter to={'/cursos'} style={{textDecoration: 'none'}}>
+                            <h2 className='cursos_h2'
+                                onMouseEnter={()=>{return d(".cursos").style.backgroundSize='150%'}}
+                                onMouseLeave={()=>{return d(".cursos").style.backgroundSize='120%'}}                            
+                            >Cursos</h2>
+                        </LinkRouter>
+                    </div>
+                </div>
+            </ul>
 
             <div className='separador'></div>
 

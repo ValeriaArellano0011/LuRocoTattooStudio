@@ -1,11 +1,13 @@
-.iniciarSesion_h1{
+.iniciarSesion_h1 {
     text-align: center;
     color: white;
     text-decoration: underline;
     margin-bottom: 10px;
 }
-
-.p_link_container{
+.container-login{
+    padding-top: 10rem;
+}
+.p_link_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,11 +15,11 @@
     margin-top: 20px;
 }
 
-.iniciarSesion_p{
+.iniciarSesion_p {
     color: white;
 }
 
-#linkRouter_iniciarSesion{
+#linkRouter_iniciarSesion {
     color: gold;
     border: 1px solid gold;
     padding: 20px;
@@ -25,11 +27,39 @@
     transition: .5s;
 }
 
-#linkRouter_iniciarSesion:hover{
+#linkRouter_iniciarSesion:hover {
     transform: scale(1.1);
     background-color: rgb(26, 26, 26);
 }
 
-.button_google{
+.button_google {
     margin-bottom: 20px;
 }
+
+.loader-container{
+    padding-top: calc(50vh - 15vh - 60px);
+}
+
+.loader {
+    position: fixed;
+    top: calc(50% -60px);
+    left: calc(50% -60px);
+    transform: translate(-50%, -50%);
+    animation: spin 1s infinite;
+    width: 120px;
+    height: 120px;
+}
+
+.loader img{
+    width: 120px;
+    height: 120px;
+}
+  
+  @keyframes spin {
+    from {
+      transform: scale(1) rotate(0deg);
+    }
+    to {
+      transform: scale(1) rotate(360deg);
+    }
+  }

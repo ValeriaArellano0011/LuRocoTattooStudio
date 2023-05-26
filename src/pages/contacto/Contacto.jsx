@@ -22,7 +22,7 @@ const Contacto = () => {
         e.target.reset()
         };
     return (
-        <main className='container'>
+        <main className='container-contact'>
             <h2 className='contacto_h2'>Contactanos</h2>
             <div>
                 <form ref={form} onSubmit={sendEmail}>

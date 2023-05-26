@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +10,31 @@
   text-decoration: none;
 }
 
-
 body {
   margin: 0;
-  font-family: 'Roboto Condensed';
+  font-family: 'Poppins', sans-serif;
   background-color: rgb(12, 12, 12);
   background-image: url('./assets/fondo4.jfif');
   background-repeat:repeat;
   background-size: 300px 300px;
+}
+
+.letterWhite{
+  color: white;
+}
+
+::-webkit-scrollbar {
+  z-index: 999;
+  width: 10px;
+  height: 100%;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(168deg, rgb(72, 72, 72) 20% , #171717 120%);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.336);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff4;
 }

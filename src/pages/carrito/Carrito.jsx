@@ -51,7 +51,7 @@ const Carrito = () => {
                 //     </p>}
                 
     return (
-        <main className={'container'}>
+        <main className={'container-cart'}>
             <h1 className="carrito_h1">TU CARRITO</h1>
             {!productos.length > 0 ? <p className="carrito_p">Aun no tenes productos en tu carrito</p> : null}
 

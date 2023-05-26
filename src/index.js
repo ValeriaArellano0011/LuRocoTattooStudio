@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import {Provider} from 'react-redux'
-import store from './store'
+import store from './redux/store'
 import {Auth0Provider} from "@auth0/auth0-react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,8 +19,12 @@ root.render(
                         }}
         > */}
                     {/*localhost*/}
-                    <Auth0Provider clientId={"ag68dgftbqXGAHEXqoDYp4zk3xoZxD1J"}
-                        domain={"dev-kjv6gna86mzb7ibr.us.auth0.com"}
+                    <Auth0Provider 
+                        //clientId={"ag68dgftbqXGAHEXqoDYp4zk3xoZxD1J"}
+                        //domain={"dev-kjv6gna86mzb7ibr.us.auth0.com"}
+                        domain={'dev-6me6sgaszkrnpweg.us.auth0.com'}
+                        clientId={'Vt9gTojrhbXP2fUIX68kT44fomvH2346'}
+                        audience={'https://tattoostudio/'}
                         authorizationParams={{
                             redirect_uri: window.location.origin
                         }}

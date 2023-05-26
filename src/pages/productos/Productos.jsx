@@ -6,6 +6,7 @@ import InputSearch from '../../components/inputSearch/InputSearch'
 import {persistCart} from "../../features/CarritoSlice";
 import {useAuth0} from "@auth0/auth0-react";
 import {useDispatch, useSelector} from "react-redux";
+import { getProducts } from '../../redux/actions'
 
 const Productos = () => {
     const [searchValue,setSearchValue] = useState()
@@ -17,25 +18,35 @@ const Productos = () => {
         setSearchValue(search.current.value)
     }
     
-    let { data: productos } = useTodosProductosQuery( searchValue ? searchValue : '')
+    //let { data: productos } = useTodosProductosQuery( searchValue ? searchValue : '')
 
-    const {isAuthenticated, user} = useAuth0()
-    const productosCarrito = useSelector(state => state.carrito.productos)
+    const [productos,setProductos] = useState([])
+    const products = useSelector(state => state.products)
 
     useEffect(() => {
+        dispatch(getProducts(searchValue ? searchValue : ''))
+    },[searchValue])
+
+    useEffect(() => {
+        setProductos(products)
+    },[products])
+
+    //const productosCarrito = useSelector(state => state.carrito.productos)
+
+    // useEffect(() => {
 
 
-        if (isAuthenticated){
-            dispatch(persistCart({
-                userEmail: user.email,
-                productos: productosCarrito
-            }))
-        }
+    //     if (isAuthenticated){
+    //         dispatch(persistCart({
+    //             userEmail: user.email,
+    //             productos: productosCarrito
+    //         }))
+    //     }
 
 
-        return () => {
-        };
-    }, [productosCarrito]);
+    //     return () => {
+    //     };
+    // }, [productosCarrito]);
 
 
     return (
@@ -43,7 +54,7 @@ const Productos = () => {
             <InputSearch searchEl={search} action={handleValue} />
             <div className='cards_container'>
                 {productos?.map((item) => {
-                    return (<ProductosCard key={item.id} data={item}/>)
+                    return item.stock > 0 && <ProductosCard key={item._id} data={item}/>
                 })}
             </div>
         </main>

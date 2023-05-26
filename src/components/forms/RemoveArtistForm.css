@@ -1,0 +1,12 @@
+.form{
+    width: 75vw;
+    height: 70%;
+    overflow: auto;
+}
+
+li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

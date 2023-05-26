@@ -4,7 +4,7 @@ import LUROCOSTUDIO from '../../assets/LUROCOSTUDIO.jpg'
 
 const About = () => {
     return (
-        <main className='container'>
+        <main className='container-about'>
             <div className='img_contenedor'>
                 <img src={LUROCOSTUDIO} alt="LUROCOSTUDIO" className='imagen' />
             </div>

@@ -1,0 +1,83 @@
+.perfil_h1{
+    color: white;
+    opacity: 1;
+}
+
+.user_picture_container{
+    position: relative;
+}
+
+.icon-container{
+    position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bdbdbd93 ;
+  border-radius: 100px;
+}
+
+.user_picture_profile{
+    height: 120px;
+    width: 120px;
+    border-radius: 100px;
+}
+
+.profile-images-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.size-img{
+    scale: .6;
+}
+.size-img:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px white;
+}
+
+.profile-images{
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.profile-images img{
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+}
+
+.picture-and-name-container{
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pictures-container{
+    margin-right: 10px;
+}
+
+.names-container{
+    left: calc(50% - 130px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 50px;
+    text-align: left;
+}

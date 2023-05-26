@@ -16,7 +16,7 @@ const ArtistasCard = (props) => {
                         <p className='mas'>Mas sobre {nombre}</p>
                     </LinkRouter>
                 </div>
-                <img className='artista-foto' alt='' src={imagen}/>
+                <img className='artista-foto' alt='artista' src={imagen}/>
             </div>
             <div className='separador'></div>
         </>

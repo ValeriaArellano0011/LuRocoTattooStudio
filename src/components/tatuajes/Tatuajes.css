@@ -10,3 +10,11 @@
     width: 20vw;
     border-radius: 20px;
 }
+
+.imgJobsCont{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    transition-duration: 1s;
+    border-radius: 15px;
+}

@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+.container-about{
+    padding-top: 10rem;
+}
+
 .imagen{
     height: 100%;
     margin-top: 30px;
@@ -13,6 +17,8 @@
 
 .texto_contenedor{
     min-height: 50vh;
+    padding-left: 7rem;
+    padding-right: 7rem;
 }
 
 .h2_about{

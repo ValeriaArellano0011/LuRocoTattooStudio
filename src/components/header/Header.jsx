@@ -1,17 +1,18 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import './Header.css'
-import {Link, Link as LinkRouter} from 'react-router-dom'
+import {Link, Link as LinkRouter, useNavigate} from 'react-router-dom'
 import LOGO from '../../assets/LOGO2.png'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import {BsCart2} from 'react-icons/bs'
 import LoginButton from "../auth0/LoginButton";
-import {useAuth0} from "@auth0/auth0-react";
 import Swal from 'sweetalert2';
+import navBack from '../../functions/navback'
 
 const Header = () => {
-
-    const {user} = useAuth0();
-    const { logout } = useAuth0();
+    const [posNav, setPosNav] = useState()
+    console.log(posNav)
+    window.onscroll = function() {navBack(setPosNav, posNav)};    
+    const navigate = useNavigate()
     const logoutAlert = () => {
         Swal.fire({
             position: 'top-end',
@@ -38,6 +39,10 @@ const Header = () => {
         {name: 'Contacto', to: '/contacto'},
     ]
 
+    
+    const userString = localStorage.getItem('user')
+    const user = userString ? JSON.parse(userString) : null
+
     return (
         <header>
             <LinkRouter to={'/'} style={{textDecoration: 'none'}}>
@@ -59,11 +64,15 @@ const Header = () => {
             </nav>
             {!user ? <LoginButton/> : <div className="dropdown">
         <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src={user.picture} alt="" className='user_picture'/>
+            <img referrerPolicy="no-referrer" src={user.role === 'admin' ? require('../../assets/admin.jpg') : user.foto === '1' ? require('../../assets/img1.png') : user.foto === '2' ? require('../../assets/img2.png') : user.foto === '3' ? require('../../assets/img3.png') : user.foto} alt="" className='user_picture'/>
         </button>
         <ul className="dropdown-menu">
+            {user.role === 'admin' ? <li><Link className="dropdown-item" to={'./admin'}>Administrador</Link></li> :
             <li><Link className="dropdown-item" to={'./perfil'}>Mi Perfil</Link></li>
-            <li><Link className="dropdown-item" onClick={logout}>Salir</Link></li>
+                }
+            <li><Link to='/' className="dropdown-item" onClick={() => {
+                localStorage.removeItem('user')
+            }}>Salir</Link></li>
         </ul>
         </div>}
 
