@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import './Artistas.css'
-import { useTodosArtistasQuery } from '../../features/ArtistasApi'
 import ArtistasCard from '../../components/artistas/ArtistasCard'
 import { useDispatch, useSelector } from 'react-redux'
-import { getArtistas } from '../../redux/actions'
-
+import { getArtistas, getNavState } from '../../redux/actions'
 
 const Artistas = () => {
     // let { data: artistas } = useTodosArtistasQuery()
 
     const dispatch = useDispatch()
     const [artistas, setArtistas] = useState([])
-
+    useEffect(() => {
+        dispatch(getNavState('Artistas'))
+    }, [dispatch])
     useEffect(() => {
         dispatch(getArtistas())
-    }, [])
+    }, [dispatch])
 
     const artistasState = useSelector(state => state.artists)
 

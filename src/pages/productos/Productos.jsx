@@ -1,18 +1,17 @@
 import React, {useState, useRef, useEffect} from 'react'
 import './Productos.css'
-import { useTodosProductosQuery } from '../../features/ProductosApi'
 import ProductosCard from '../../components/productos/ProductosCard'
 import InputSearch from '../../components/inputSearch/InputSearch'
-import {persistCart} from "../../features/CarritoSlice";
-import {useAuth0} from "@auth0/auth0-react";
 import {useDispatch, useSelector} from "react-redux";
-import { getProducts } from '../../redux/actions'
+import { getNavState, getProducts } from '../../redux/actions'
 
 const Productos = () => {
     const [searchValue,setSearchValue] = useState()
     const search = useRef(null)
     const dispatch = useDispatch()
-
+    useEffect(() => {
+        dispatch(getNavState('Productos'))
+    }, [dispatch])
     const handleValue = (e) => {
         e.preventDefault()
         setSearchValue(search.current.value)
@@ -25,7 +24,7 @@ const Productos = () => {
 
     useEffect(() => {
         dispatch(getProducts(searchValue ? searchValue : ''))
-    },[searchValue])
+    },[searchValue, dispatch])
 
     useEffect(() => {
         setProductos(products)

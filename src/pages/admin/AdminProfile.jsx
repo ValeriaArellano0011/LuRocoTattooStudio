@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Agenda from '../../components/agenda/Agenda'
 import AddArtistForm from '../../components/forms/AddArtistForm';
 import AddProductForm from '../../components/forms/AddProductForm';
@@ -8,9 +8,14 @@ import RemoveArtistForm from '../../components/forms/RemoveArtistForm';
 import RemoveProductForm from '../../components/forms/RemoveProductForm';
 import './AdminProfile.css'
 import Solicitudes from '../../components/Solicitudes/Solicitudes';
+import { useDispatch } from 'react-redux';
+import { getNavState } from '../../redux/actions';
 
 const AdminProfile = () => {
-
+  const dispatch = useDispatch();
+  useEffect(()=>{
+      dispatch(getNavState(''))
+  },[dispatch])
   const [openMenu, setOpenMenu] = useState('')
   const handleArtist = (string) => {
     setOpenMenu(string)

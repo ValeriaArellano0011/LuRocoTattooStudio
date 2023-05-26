@@ -69,7 +69,7 @@ header{
 
 .navbar_links{
     font-family: 'Poppins', sans-serif;
-    text-decoration: underline;
+    text-decoration: overline;
     text-decoration-color: black;
 /*     color: goldenrod; */
     color: white;
@@ -80,7 +80,7 @@ header{
 }
 
 .navbar_links:hover{
-    text-decoration: underline;
+    text-decoration: overline;
     text-decoration-color: goldenrod;
     color: goldenrod;
     transform: scale(1.1);

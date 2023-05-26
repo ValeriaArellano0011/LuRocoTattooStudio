@@ -352,3 +352,10 @@ export function getAppointments(month) {
             })
     }
 }
+
+export function getNavState(e){
+    return {
+        type: 'GET_NAV_STATE',
+        payload: e
+    }
+}

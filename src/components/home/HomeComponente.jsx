@@ -9,7 +9,7 @@ const Main = () => {
         <div className='container'>
             <div className='video-container'>
                 <div className='video-canvas'>
-                    <button>ASD</button>
+                    {/* options */}
                 </div>
                 <video className='' id='video' autoPlay loop muted>
                     <source src={VIDEO_HOME} type="video/mp4"/>
