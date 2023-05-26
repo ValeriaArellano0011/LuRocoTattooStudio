@@ -1,12 +1,12 @@
-main{
-  min-height: 100vh;
-  background-color: black;
-  margin-bottom: 15px;
-  border-radius: 10px;
-}
-
 .flex-home{
   display: flex;
+  flex-direction: column;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -16,7 +16,6 @@ main{
   display: flex;
   justify-content: center;
   padding: 0;
-  margin: 0;
   position: relative;
   overflow: hidden;
 }
@@ -45,6 +44,8 @@ main{
   margin: 0;
   border-radius: 20px;
   overflow: hidden;
+  margin-top: 100px;
+  margin-left: -40px;
 }
 
 .prev{
@@ -135,9 +136,9 @@ main{
 }
 
 .artistas_home{
-  background-image:url(../../assets/LUROCO2.jpg); 
+  background-image:url(../../assets/banner.jpeg); 
   background-size: 120%; 
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   height: 300px;
   transition-duration: .5s;
@@ -145,6 +146,7 @@ main{
   justify-content: center;
   align-items: center;
   filter: grayscale(.4);
+  width: 1200px;
 }
 
 .artistas_h2{

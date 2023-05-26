@@ -1,3 +1,4 @@
+import './index.css';
 import React, {useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom';
@@ -39,29 +40,29 @@ const App = () => {
 
 
   return (
-    <>
-    <BrowserRouter>
-        <ScrollToTop />
-        <Layout>
-          <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/artistas' element={<Artistas/>} />
-            <Route path='/carrito' element={<Carrito/>} />
-            <Route path='/artistas/:id' element={<ArtistaDetalle/>}/>
-            <Route path='/productos' element={<Productos/>} />
-            <Route path='/nosotrxs' element={<About/>} />
-            <Route path='/contacto' element={<Contacto/>} />
-            <Route path='/cursos' element={<Cursos/>} />
-            <Route path='/perfil' element={<UserProfile/>}/>
-            <Route path='/admin' element={<AdminProfile/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/signup' element={<Signup/>}/>
-            <Route path='/auth' element={<AuthGToken/>}/>
-            <Route path='/verifyemail' element={<VerifyEmail/>}/>
-          </Routes>
-        </Layout>
-    </BrowserRouter>
-    </>
+    <div className='App'>
+      <BrowserRouter>
+          <ScrollToTop/>
+          <Layout>
+            <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='/artistas' element={<Artistas/>} />
+              <Route path='/carrito' element={<Carrito/>} />
+              <Route path='/artistas/:id' element={<ArtistaDetalle/>}/>
+              <Route path='/productos' element={<Productos/>} />
+              <Route path='/nosotrxs' element={<About/>} />
+              <Route path='/contacto' element={<Contacto/>} />
+              <Route path='/cursos' element={<Cursos/>} />
+              <Route path='/perfil' element={<UserProfile/>}/>
+              <Route path='/admin' element={<AdminProfile/>}/>
+              <Route path='/login' element={<Login/>}/>
+              <Route path='/signup' element={<Signup/>}/>
+              <Route path='/auth' element={<AuthGToken/>}/>
+              <Route path='/verifyemail' element={<VerifyEmail/>}/>
+            </Routes>
+          </Layout>
+      </BrowserRouter>
+    </div>
   )
 }
 

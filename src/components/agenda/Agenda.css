@@ -10,6 +10,10 @@
     margin-left: -12px;
 }
 
+.formContainer{
+    backdrop-filter: blur(10px);
+}
+
 .day{
     transition-duration: .4s;
     padding: 20px;
@@ -22,16 +26,15 @@
     border-width: 5px;
     background-color: rgb(214, 214, 214);
     color: black;
-    outline: black;
+    outline: rgb(71, 71, 71);
     outline-style: dashed;
     outline-offset: -4px;
-    outline-width: 1px;
+    outline-width: .5px;
 }
 
 .day:hover{
     background-color: rgb(228, 226, 124);
     color: black;
-    scale: 1.01;
 }
 
 .agenda {
@@ -42,13 +45,10 @@
 table {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     color: white;
-    background-color: #9e5492;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    background-color: rgb(97, 87, 97);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     text-shadow: 0px 0px 1px rgb(117, 117, 48);
-    box-shadow: 0px 0px 10px yellow;
 }
 
 th,
@@ -102,21 +102,44 @@ td {
     align-items: center;
 }
 
+.ghost-btn-agenda {
+    color: black;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 25px;
+    font-weight: bolder;
+    transition-duration: .4s;
+    border: none;
+}
+
+.ghost-btn-agenda:hover{
+    background-color: rgb(219, 219, 219);
+    font-size: 28px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
 .month-name-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    vertical-align: middle;
     align-items: center;
     text-align: center;
+    background-color: white;
+    color: black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
 }
 
 .menu-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #9e5492;
+    width: 100vw;
+    height: 100vh;
     z-index: 9999;
+    backdrop-filter: blur(10px);
 }
 
 .menu-content {
@@ -124,7 +147,6 @@ td {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
