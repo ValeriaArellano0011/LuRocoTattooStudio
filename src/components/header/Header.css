@@ -7,52 +7,76 @@
     box-sizing: border-box;
 }
 
-header{
-    height: 7rem;
+.headerContainer{
     width: 100%;
-    padding: 0;
-    background: linear-gradient(to top, rgba(72, 72, 72, 0) 20% , #000000 120%);
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
     position: fixed;
     z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-top: 17px;
+}
+
+header{
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 40px;
+    padding-right: 10px;
+    margin-left: 0px;
+    background-color: #171717d8;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 12px;
 }
 
 .header-h1{
     color: palevioletred;
     text-decoration: none;
     font-family: 'Rye', cursive;
-    margin-left: 30px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .Navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    margin-top: 3px;
 }
 
 .h1_img{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    text-align: center;
     align-items: center;
-    gap: 1rem;
+    vertical-align: middle;
+    padding-right: 20px;
 }
 
 .logo_header{
-    height: 10vh;
+    height: 3rem;
 }
 
 .navbar_links{
     font-family: 'Poppins', sans-serif;
     text-decoration: underline;
     text-decoration-color: black;
-    color: goldenrod;
+/*     color: goldenrod; */
+    color: white;
     font-size: 14px;
     font-weight: bolder;
+    text-underline-offset: 5px;
+    text-decoration-color: transparent;
 }
 
 .navbar_links:hover{
@@ -86,9 +110,10 @@ header{
 
 .carrito_icon{
     font-size: 2.5rem;
-    height: 4vh;
+    height: 30px;
     padding: 5px;
-    color: goldenrod;
+/*     color: goldenrod; */
+    color: white;
     transition: .5s;
 }
 
@@ -134,6 +159,12 @@ header{
     transition: .3s;
 }
 
+.dropdown{
+    margin-right: -60px;
+    width: auto;
+    align-items: flex-end;
+}
+
 .dropdown-item:hover{
     background-color: black;
     color: white;
@@ -141,118 +172,17 @@ header{
 
 .ingresar_btn:hover{
     transform: scale(1.1);
-    }
+}
 
 @media only screen and (max-width: 1024px){
-    header{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-between;
-        padding: 0;
-    }
 
-    .h1_img{
-        width: 45vw;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .logo_header{
-        height: 8vh;
-    }
-
-    .header-h1{
-        font-size: 1.5rem;
-    }
-
-    .Navbar{
-        width: 30vw;
-    }
-
-    .navbar_links{
-        font-size: .8rem;
-    }
 }
 
 
 @media only screen and (max-width: 930px) {
-    .header-h1{
-        margin-left: 0;
-    }
 
-    .nav-btn{
-        visibility: visible;
-        opacity: 1;
-        margin-left: 10px;
-    }
-
-    .nav-btn-xpand{
-        padding: 5px;
-        cursor: pointer;
-        color: white;
-        visibility: visible;
-        opacity: 1;
-        font-size: 1.5rem;
-    }
-
-    .Navbar{
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        padding: 20px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        background-color: black;
-        transition: 1s;
-        transform: translateY(-120vh);
-        z-index: 1;
-    }
-
-    header .responsive_nav{
-        transform: none;
-    }
-
-    nav .nav-close-btn{
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-    }
-
-    .h1_img{
-        width: 55vw;
-        justify-content: center;
-    }
-
-    .ingresar_btn{
-        font-size: .8rem;
-    }
 }
 
 @media only screen and (max-width:500px){
-    .header-h1{
-        font-size: 1.1rem;
-    }
 
-    .logo_header{
-        height: 6vh;
-    }
-
-    .nav-btn{
-        font-size: 1rem;
-    }
-    
-    .sesion{
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .ingresar_btn{
-        font-size: .7rem;
-    }
 }

@@ -2,16 +2,12 @@
 
 footer{
     height: 15vh;
-    background-color: black;
+    background-color: #171717d8;
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    border-radius: 10px;
-}
-
-.footer-h1{
-    color: black;
 }
 
 .qr_footer{
@@ -35,7 +31,7 @@ footer{
 .text_small{
     color: palevioletred;
     font-family: 'Rye', cursive;
-    font-size: 1.3rem;
+    font-size: .8rem;
 }
 
 .footer_Navbar{
@@ -62,7 +58,7 @@ footer{
 
 .instagram_logo{
     transition: .5s;
-    height: 3.2rem;
+    height: 1.2rem;
     color: white;
     font-size: 3.2rem;
 }
@@ -75,7 +71,8 @@ footer{
 .btn_up_arrow{
     height: 2.5rem;
     border-radius: 360px;
-    margin-top: 5px;
+    margin-right:15px;
+    margin-bottom: 5px;
 }
 
 .up_arrow{
@@ -103,15 +100,6 @@ footer{
 
     .qr_img{
         display: none;
-    }
-
-    .instagram_logo{
-        height: 5vh;
-    }
-
-    .btn_up_arrow{
-        margin-top: 0;
-        height: 5vh;
     }
 
     .a_btn_container{

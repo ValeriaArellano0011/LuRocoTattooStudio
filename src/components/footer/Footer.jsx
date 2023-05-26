@@ -27,12 +27,6 @@ const scrollUp = () => {
 
   return (
     <footer>
-
-        <div className='footer_Navbar'>
-            {Paginas.map(item =>
-                <LinkRouter to={item.to}  key={item.name} className="navbar_links">{item.name}</LinkRouter>)}
-        </div>
-
         <div  className='qr_footer'>
           <small className='text_small'>LUROCO TATTOO STUDIO © | { date } </small>
         </div>
