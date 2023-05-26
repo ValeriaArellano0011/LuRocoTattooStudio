@@ -68,22 +68,6 @@ footer{
 }
 
 
-.btn_up_arrow{
-    height: 2.5rem;
-    border-radius: 360px;
-    margin-right:15px;
-    margin-bottom: 5px;
-}
-
-.up_arrow{
-    height: 2.5rem;
-    border-radius: 360px;
-    transition: .5s;
-}
-
-.up_arrow:hover{
-    transform: scale(1.1);
-}
 
 @media only screen and (max-width: 800px){
 

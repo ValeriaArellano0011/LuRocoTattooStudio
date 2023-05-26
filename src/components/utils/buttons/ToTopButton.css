@@ -1,0 +1,19 @@
+.btn_up_arrow{
+    width: auto;
+    border-radius: 100%;
+    position: fixed;
+    z-index: 999;
+    bottom: 80px;
+    right: 50px;
+}
+
+.up_arrow{
+    height: 2.5rem;
+    border-radius: 100%;
+    transition: .5s;
+}
+
+.up_arrow:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
