@@ -1,18 +1,20 @@
 import React, {useRef, useState} from 'react'
 import './Header.css'
-import {Link, Link as LinkRouter, useNavigate} from 'react-router-dom'
+import {Link, Link as LinkRouter} from 'react-router-dom'
 import LOGO from '../../assets/LOGO2.png'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import {BsCart2} from 'react-icons/bs'
 import LoginButton from "../auth0/LoginButton";
 import Swal from 'sweetalert2';
 import navBack from '../../functions/navback'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
     const [posNav, setPosNav] = useState()
+    const navState = useSelector(state=>state.navState)
+
     console.log(posNav)
     window.onscroll = function() {navBack(setPosNav, posNav)};    
-    const navigate = useNavigate()
     const logoutAlert = () => {
         Swal.fire({
             position: 'top-end',
@@ -22,7 +24,6 @@ const Header = () => {
             timer: 3000
         })
     }
-
     const navRef = useRef()
 
     const showNav = () => {
@@ -54,7 +55,7 @@ const Header = () => {
             <nav className='Navbar' ref={navRef}>
                 {Paginas.map(item =>
                     <LinkRouter to={item.to} key={item.name} className="navbar_links"
-                                onClick={showNav}>{item.name}</LinkRouter>)}
+                                onClick={showNav} style={{textDecorationColor: navState === item.name? 'goldenrod': 'transparent'}} >{item.name}</LinkRouter>)}
                 <LinkRouter to='/carrito' onClick={showNav}>
                     <BsCart2 className='carrito_icon'/>
                 </LinkRouter>

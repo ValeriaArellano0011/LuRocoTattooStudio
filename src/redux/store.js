@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+/* import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import thunkMiddleware from 'redux-thunk';
 
@@ -9,11 +9,11 @@ const store = createStore(
 )
 
 export default store
-
+ */
 
 /* TEST LALO */
 
-/* import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
 
@@ -25,4 +25,4 @@ const store = createStore(
     )
 )
 
-export default store */
+export default store

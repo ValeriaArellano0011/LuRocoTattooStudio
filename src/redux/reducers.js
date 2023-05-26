@@ -7,6 +7,7 @@ const initialState = {
     solicitudes: [],
     trabajos: [],
     appointments: [],
+    navState: ''
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -89,6 +90,11 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 appointments: action.payload
+            }
+        case 'GET_NAV_STATE':
+            return {
+                ...state,
+                navState: action.payload
             }
         default:
             return { ...state };
