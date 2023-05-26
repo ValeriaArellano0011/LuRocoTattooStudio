@@ -1,10 +1,16 @@
-import React, {useRef} from 'react'
+import React, {useEffect, useRef} from 'react'
 import './Contacto.css'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
+import { useDispatch } from 'react-redux'
+import { getNavState } from '../../redux/actions'
 
 
 const Contacto = () => {
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(getNavState('Contacto'))
+    },[dispatch])
 
     const form = useRef();
 

@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './About.css'
 import LUROCOSTUDIO from '../../assets/LUROCOSTUDIO.jpg'
+import { useDispatch } from 'react-redux'
+import { getNavState } from '../../redux/actions'
 
 const About = () => {
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(getNavState('Sobre nosotrxs'))
+    },[dispatch])
     return (
         <main className='container-about'>
             <div className='img_contenedor'>
