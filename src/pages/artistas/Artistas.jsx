@@ -22,13 +22,13 @@ const Artistas = () => {
         setArtistas(artistasState)
     }, [artistasState])
     return (
-        <main className='container'>
+        <div className='container'>
             <div className='artistas-container'>
                 {artistas?.map((item) => {
                     return (<ArtistasCard key={item._id} data={item} />)
                 })}
             </div>
-        </main >
+        </div>
     )
 }
 

@@ -128,7 +128,9 @@ function Agenda() {
         <div>
             <div className='month-year-container'>
                 <div className='month-name-container'>
+                    <button className='ghost-btn-agenda' onClick={() => prevMonth(month, setMonth, currentMonth, setCurrentMonth)}>{'<'}</button>
                     <h2>{MONTH_NAMES[currentMonth.getMonth()]}, {currentMonth.getFullYear()}</h2>
+                    <button className='ghost-btn-agenda' onClick={() => nextMonth(month, setMonth, currentMonth, setCurrentMonth)}>{'>'}</button>
                 </div>
             </div>
             <table>
@@ -173,11 +175,6 @@ function Agenda() {
                     })}
                 </tbody>
             </table>
-
-            <div className='prev-month-next-container'>
-                <button className='ghost-btn' onClick={() => prevMonth(month, setMonth, currentMonth, setCurrentMonth)}>Anterior</button>
-                <button className='ghost-btn' onClick={() => nextMonth(month, setMonth, currentMonth, setCurrentMonth)}>Siguiente</button>
-            </div>
 
             {showMenu && (
                 <div className="menu-container">
@@ -230,7 +227,7 @@ function Agenda() {
                             })}
                         </div>
 
-                        <div>
+                        <div className='formContainer'>
                             <label htmlFor="client">Nombre del cliente:</label>
                             <input type="text" id='client' name='client' onChange={(e) => handleInputChange(e, input, setInput)} />
                             <label htmlFor="email">Email del cliente:</label>

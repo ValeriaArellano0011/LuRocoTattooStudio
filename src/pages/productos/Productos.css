@@ -4,6 +4,8 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 10rem;
+    min-height: 100vh;
+    margin-bottom: 100px;
 }
 
 .productos_h1{
