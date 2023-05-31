@@ -5,8 +5,8 @@ import LOGO from '../../assets/LOGO2.png'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { BsCart2 } from 'react-icons/bs'
 import LoginButton from "../auth0/LoginButton";
-/* import Swal from 'sweetalert2';
- */import { useSelector } from 'react-redux'
+/* import Swal from 'sweetalert2'; */
+import { useSelector } from 'react-redux'
 
 const Header = () => {
     const navState = useSelector(state=>state.navState)
@@ -34,7 +34,6 @@ const Header = () => {
         { name: 'Contacto', to: '/contacto' },
     ]
 
-
     const userString = localStorage.getItem('user')
     const user = userString ? JSON.parse(userString) : null
 
@@ -50,8 +49,8 @@ const Header = () => {
             <nav className='Navbar' ref={navRef}>
                 {Paginas.map(item =>
                     <LinkRouter to={item.to} key={item.name} className="navbar_links"
-                                onClick={showNav} style={{textDecorationColor: navState===item.name? 'goldenrod' : 'transparent', color: navState===item.name? 'goldenrod' : 'white'}}>{item.name}</LinkRouter>)}
-                <LinkRouter to='/carrito' onClick={showNav}>
+                                onClick={showNav} style={{ color: navState===item.name? 'goldenrod' : null}}>{item.name}</LinkRouter>)}
+                    <LinkRouter to='/carrito' onClick={showNav}>
                     <BsCart2 className='carrito_icon'/>
                 </LinkRouter>
                 <button onClick={showNav} className="nav-btn nav-close-btn">

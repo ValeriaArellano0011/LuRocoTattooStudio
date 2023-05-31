@@ -11,9 +11,28 @@
     height: 2.5rem;
     border-radius: 100%;
     transition: .5s;
+    opacity: .5;
 }
 
 .up_arrow:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
+    opacity: 1;
+    animation-name: resplandor;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes resplandor {
+    0% {
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    }
+    
+    50% {
+        box-shadow: 0px 0px 200px rgba(255, 255, 255, 0);
+    }
+    
+    100% {
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    }
 }

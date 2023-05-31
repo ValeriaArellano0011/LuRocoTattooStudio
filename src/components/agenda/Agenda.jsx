@@ -178,7 +178,7 @@ function Agenda() {
 
             {showMenu && (
                 <div className="menu-container">
-                    <div className="menu-content">
+                    <div className="menu-content1">
                         <h3>Horarios disponibles para el {selectedDate.getDate()} de {MONTH_NAMES[selectedDate.getMonth()]}</h3>
                         {/* Agrega aquí los horarios disponibles para la fecha seleccionada */}
                         <div>
@@ -208,7 +208,7 @@ function Agenda() {
                                 
                                 return (
                                     <button
-                                        className={`${isButtonDisabled ? 'disabled' : 'close-menu-hours '}`}
+                                        className={`${isButtonDisabled ? 'disabled' : 'hours'}`}
                                         id={`taken${index}`}
                                         onClick={() => {
                                             handleHourChange(hour, index, input, setInput)
@@ -228,18 +228,24 @@ function Agenda() {
                         </div>
 
                         <div className='formContainer'>
-                            <label htmlFor="client">Nombre del cliente:</label>
-                            <input type="text" id='client' name='client' onChange={(e) => handleInputChange(e, input, setInput)} />
-                            <label htmlFor="email">Email del cliente:</label>
-                            <input type="text" id='email' name='email' onChange={(e) => handleInputChange(e, input, setInput)} />
-                            <label htmlFor="phone">Número telefónico del cliente:</label>
-                            <input type="text" id='phone' name='phone' onChange={(e) => handleInputChange(e, input, setInput)} />
-                            <label htmlFor="description">Descripción:</label>
-                            <textarea id='description' name='description' cols="30" rows="10" onChange={(e) => handleInputChange(e, input, setInput)}></textarea>
-                            <button onClick={(e) => handleCreateAppointment(e, input, setInput, dispatch, sendAppointment, selectedArtist)}>Agendar</button>
+                            <div className='flexFormCont'>
+                                <div className='flexForm'>
+                                    <label htmlFor="client">Nombre del cliente:</label>
+                                    <input placeholder='John Doe' type="text" id='client' name='client' onChange={(e) => handleInputChange(e, input, setInput)} />
+                                    <label htmlFor="email">Email del cliente:</label>
+                                    <input placeholder='example@email.com' type="text" id='email' name='email' onChange={(e) => handleInputChange(e, input, setInput)} />
+                                    <label htmlFor="phone">Número telefónico del cliente:</label>
+                                    <input placeholder='(+54 261 2345 678)' type="text" id='phone' name='phone' onChange={(e) => handleInputChange(e, input, setInput)} />
+                                    <label htmlFor="description">Descripción:</label>
+                                    <textarea id='description' name='description' cols="30" rows="10" onChange={(e) => handleInputChange(e, input, setInput)}></textarea>
+                                </div>
+                                <div className='two-buttons-one-div'>
+                                    <button className='agendar-button' onClick={(e) => handleCreateAppointment(e, input, setInput, dispatch, sendAppointment, selectedArtist)}>Agendar</button>
+                                    <button className='agendar-button' >Ver agendados</button>                            
+                                    <button className='close-menu-hours' onClick={() => setShowMenu(false)}>Cerrar</button>
+                                </div>
+                            </div>
                         </div>
-
-                        <button className='close-menu-hours' onClick={() => setShowMenu(false)}>Cerrar</button>
                     </div>
                 </div>
             )}

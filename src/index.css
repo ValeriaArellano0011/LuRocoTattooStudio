@@ -20,6 +20,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
 .App{
   display: flex;
   justify-content: center;
@@ -44,13 +45,16 @@ body {
   width: 10px;
   height: 100%;
 }
+
 ::-webkit-scrollbar-track {
   background: linear-gradient(168deg, rgb(72, 72, 72) 20% , #171717 120%);
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.336);
-  border-radius: 1px;
+  border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #fff4;
 }

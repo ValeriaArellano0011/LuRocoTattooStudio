@@ -29,7 +29,7 @@ const Contacto = () => {
         };
     return (
         <main className='container-contact'>
-            <h2 className='contacto_h2'>Contactanos</h2>
+            <h2 className='contacto_h2'>Contáctanos</h2>
             <div>
                 <form ref={form} onSubmit={sendEmail}>
                     <input type="text" className='input_contacto' name='name' placeholder='Nombre' required/>

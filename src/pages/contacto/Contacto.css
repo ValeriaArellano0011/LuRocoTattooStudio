@@ -14,7 +14,6 @@ textarea{
 .contacto_h2{
     text-align: center;
     color: white;
-    text-decoration: underline;
 }
 
 
@@ -25,6 +24,9 @@ form{
     align-items: center;
     gap: 2rem;
     margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.589);
+    border-radius: 10px;
 }
 
 .input_contacto{
@@ -36,15 +38,15 @@ form{
 
 .btn_contacto{
     padding: 10px 20px;
-    background-color: white;
-    color: black;
+    background-color: #598af1;
+    color: white;
     font-size: 1.3rem;
     border-radius: 10px;
     transition: .5s;
 }
 
 .btn_contacto:hover{
-    background-color: white;
+    background-color: #446abd;
     transform: scale(1.1);
 }
 

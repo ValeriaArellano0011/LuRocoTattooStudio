@@ -5,6 +5,7 @@ import './Carrito.css'
 import {useAuth0} from "@auth0/auth0-react";
 import {useEffect} from "react";
 import {addUnit, clearCart, getUserCart, persistCart, removeProduct, removeUnit} from "../../features/CarritoSlice";
+import { Underconstruction } from "../../components/utils/underconstruction/Underconstruction";
 
 
 const Carrito = () => {
@@ -15,30 +16,6 @@ const Carrito = () => {
     const productosCarrito = useSelector(state => state.carrito.productos)
     const carritoUsuarioLogeado = useSelector(state => state.carrito.carritoUsuarioLogeado)
     productos = !isAuthenticated ? productosCarrito : carritoUsuarioLogeado
-
-    useEffect(() => {
-
-        isAuthenticated && dispatch(getUserCart(user.email))
-
-        return () => {
-
-        };
-    }, [isAuthenticated]);
-
-    useEffect(() => {
-
-
-        if (isAuthenticated){
-            dispatch(persistCart({
-                userEmail: user.email,
-                productos: productosCarrito
-            }))
-        }
-
-
-        return () => {
-        };
-    }, [productosCarrito]);
 
 
 
@@ -53,6 +30,7 @@ const Carrito = () => {
     return (
         <main className={'container-cart'}>
             <h1 className="carrito_h1">TU CARRITO</h1>
+        <Underconstruction/>
             {!productos.length > 0 ? <p className="carrito_p">Aun no tenes productos en tu carrito</p> : null}
 
             {
