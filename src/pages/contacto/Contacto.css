@@ -38,7 +38,7 @@ form{
 
 .btn_contacto{
     padding: 10px 20px;
-    background-color: #598af1;
+    background-color: #d87093;
     color: white;
     font-size: 1.3rem;
     border-radius: 10px;
@@ -46,7 +46,7 @@ form{
 }
 
 .btn_contacto:hover{
-    background-color: #446abd;
+    background-color: rgb(184, 94, 124);
     transform: scale(1.1);
 }
 

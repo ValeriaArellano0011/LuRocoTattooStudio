@@ -1,6 +1,27 @@
 import axios from 'axios'
-
-const URL_API = 'https://lurocotattoo.fly.dev'
+import { URL_API } from '../config'
+import { 
+    GET_ARTIST, 
+    GET_ARTISTS, 
+    LOGIN, 
+    POST_TATTOOS, 
+    SIGNUP, 
+    UPDATE_USER_PHOTO, 
+    GET_TATTOS_BY_ARTIST,
+    NEW_ARTIST,
+    DELETE_ARTIST,
+    EDIT_ARTIST,
+    GET_PRODUCTS,
+    ADD_PRODUCT,
+    DELETE_PRODUCT,
+    EDIT_PRODUCT,
+    PENDING_TATTOOS,
+    GET_JOBS,
+    CREATE_APPOINTMENT,
+    GET_APPOINTMENTS,
+    GET_NAV_STATE,
+    CONTENT_TYPE
+} from '../misc/redux-consts'
 
 export async function googleAuth() {
     return await axios.get(`${URL_API}/auth/google`)
@@ -11,7 +32,7 @@ export function loginWithGoogle(accessToken) {
         await axios.post(`${URL_API}/auth/loginwithgoogle`, { accessToken })
             .then(res => {
                 dispatch({
-                    type: 'LOGIN',
+                    type: LOGIN,
                     payload: res.data
                 })
             })
@@ -31,7 +52,7 @@ export const signup = (name, lastname, email, password) => async (dispatch) => {
         });
         const data = await response.data;
         return dispatch({
-            type: 'SIGNUP',
+            type: SIGNUP,
             payload: data,
         });
     } catch (error) {
@@ -46,7 +67,7 @@ export function login(email, password) {
             .then(res => {
                 console.log(res.data)
                 dispatch({
-                    type: 'LOGIN',
+                    type: LOGIN,
                     payload: res.data
                 })
             })
@@ -61,7 +82,7 @@ export function updateUserPhoto(email, foto) {
         await axios.post(`${URL_API}/auth/updatephoto`, { email, foto })
             .then(res => {
                 dispatch({
-                    type: 'UPDATE_USER_PHOTO',
+                    type: UPDATE_USER_PHOTO,
                     payload: res.data
                 })
             })
@@ -76,10 +97,10 @@ export function updateUserPhoto(email, foto) {
 export function uploadMyTattoos(formData) {
     return async function (dispatch) {
         await axios.post(`${URL_API}/tatuajes/uploadmytattoos`, formData,
-            { headers: { 'Content-Type': 'multipart/form-data' } })
+            { headers: CONTENT_TYPE })
             .then(res => {
                 dispatch({
-                    type: 'POST_TATTOOS'
+                    type: POST_TATTOOS
                 })
             })
             .catch((e) => {
@@ -88,21 +109,6 @@ export function uploadMyTattoos(formData) {
     }
 }
 
-// export async function uploadMyTattoos(formData) {
-//     await axios.post(`${URL_API}/tatuajes/uploadmytattoos`, formData,
-//     {
-//         headers: {
-//             'Content-Type': 'multipart/form-data'
-//         }
-//     })
-//     .then(res => {
-//         console.log(res.data)
-//     })
-//     .catch((e) => {
-//         console.log(e);
-//     })
-// }
-
 //----------------artistas ---------------
 
 export function getArtistas() {
@@ -110,7 +116,7 @@ export function getArtistas() {
         await axios.get(`${URL_API}/artistas`)
             .then(res => {
                 dispatch({
-                    type: 'GET_ARTISTS',
+                    type: GET_ARTISTS,
                     payload: res.data.response
                 })
             })
@@ -125,7 +131,7 @@ export function getOneArtist(id) {
         await axios.get(`${URL_API}/artistas/${id}`)
             .then(res => {
                 dispatch({
-                    type: 'GET_ARTIST',
+                    type: GET_ARTIST,
                     payload: res.data.response
                 })
             })
@@ -140,7 +146,7 @@ export function getArtistTattoos(id) {
         await axios.get(`${URL_API}/tatuajes/artista/${id}`)
             .then(res => {
                 dispatch({
-                    type: 'GET_TATTOS_BY_ARTIST',
+                    type: GET_TATTOS_BY_ARTIST,
                     payload: res.data.response
                 })
             })
@@ -155,11 +161,11 @@ export const addNewArtist = (formData) => {
         const res = await axios.post(
             `${URL_API}/artistas/newartist`,
             formData,
-            { headers: { 'Content-Type': 'multipart/form-data' } }
+            { headers: CONTENT_TYPE }
         );
 
         return dispatch({
-            type: 'NEW_ARTIST',
+            type: NEW_ARTIST,
             payload: res.data.response
         })
     }
@@ -170,7 +176,7 @@ export function removeArtist(artistId) {
         await axios.delete(`${URL_API}/artistas/${artistId}`)
             .then(res => {
                 dispatch({
-                    type: 'DELETE_ARTIST',
+                    type: DELETE_ARTIST,
                     payload: res.data.response
                 })
             })
@@ -185,10 +191,10 @@ export const editArtist = (formData, artistId) => {
         const res = await axios.put(
             `${URL_API}/artistas/${artistId}`,
             formData,
-            { headers: { 'Content-Type': 'multipart/form-data' } }
+            { headers: CONTENT_TYPE }
         );
         return dispatch({
-            type: 'EDIT_ARTIST',
+            type: EDIT_ARTIST,
             payload: res.data.response
         })
     }
@@ -202,7 +208,7 @@ export function getProducts(search) {
         await axios.get(`${URL_API}/productos/?producto=${search}`)
             .then(res => {
                 dispatch({
-                    type: 'GET_PRODUCTS',
+                    type: GET_PRODUCTS,
                     payload: res.data.response
                 })
             })
@@ -217,10 +223,10 @@ export const addProduct = (formData) => {
         const res = await axios.post(
             `${URL_API}/productos`,
             formData,
-            { headers: { 'Content-Type': 'multipart/form-data' } }
+            { headers: CONTENT_TYPE }
         );
         return dispatch({
-            type: 'ADD_PRODUCT',
+            type: ADD_PRODUCT,
             payload: res.data.response
         })
     }
@@ -231,7 +237,7 @@ export function removeProduct(id) {
         await axios.delete(`${URL_API}/productos/${id}`)
             .then(res => {
                 dispatch({
-                    type: 'DELETE_PRODUCT',
+                    type: DELETE_PRODUCT,
                     payload: res.data.response
                 })
             })
@@ -242,18 +248,16 @@ export function removeProduct(id) {
 }
 
 export const editProduct = (formData, productId) => {
-    console.log('entrara?', productId)
     for (let pair of formData.entries()) {
         console.log(pair[0] + ', ' + pair[1]);
     }
     return async function (dispatch) {
         await axios.put(`${URL_API}/productos/${productId}`,
             formData,
-            { headers: { 'Content-Type': 'multipart/form-data' } }
+            { headers: CONTENT_TYPE }
         ).then(res => {
-            console.log('entra 5')
             dispatch({
-                type: 'EDIT_PRODUCT',
+                type: EDIT_PRODUCT,
                 payload: res.data.response
             })
         }).catch((e) => {
@@ -269,7 +273,7 @@ export function getPendings() {
         await axios.get(`${URL_API}/tatuajes/getpendings`)
             .then(res => {
                 dispatch({
-                    type: 'PENDING_TATTOOS',
+                    type: PENDING_TATTOOS,
                     payload: res.data
                 })
             })
@@ -296,7 +300,7 @@ export function getJobs(id) {
         await axios.get(`${URL_API}/tatuajes/getjobs/${id}`)
             .then(res => {
                 dispatch({
-                    type: 'GET_JOBS',
+                    type: GET_JOBS,
                     payload: res.data
                 })
             })
@@ -310,7 +314,7 @@ export function resetJobs() {
     return async function (dispatch) {
         try {
             dispatch({
-                type: 'GET_JOBS',
+                type: GET_JOBS,
                 payload: []
             })
             
@@ -327,7 +331,7 @@ export function sendAppointment(input) {
         await axios.post(`${URL_API}/appointment/create`, input)
             .then(res => {
                 dispatch({
-                    type: 'CRATE_APPOINTMENT',
+                    type: CREATE_APPOINTMENT,
                     payload: res.data
                 })
             })
@@ -343,7 +347,7 @@ export function getAppointments(month) {
             .then(res => {
                 console.log(res.data)
                 dispatch({
-                    type: 'GET_APPOINTMENTS',
+                    type: GET_APPOINTMENTS,
                     payload: res.data
                 })
             })
@@ -355,7 +359,7 @@ export function getAppointments(month) {
 
 export function getNavState(e){
     return {
-        type: 'GET_NAV_STATE',
+        type: GET_NAV_STATE,
         payload: e
     }
 }

@@ -211,12 +211,12 @@ td.disabled{
     padding: 10px;
     top: 0px;
     right: 20px;
-    background-color: #598af1;
+    background-color: palevioletred;
     transition-duration: .4s;
 }
 
 .close-menu-hours:hover, .agendar-button:hover{
-    background-color: #446abd;
+    background-color: rgb(184, 94, 124);
     color: white;
 }
 

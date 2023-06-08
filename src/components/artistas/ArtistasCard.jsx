@@ -6,7 +6,6 @@ const ArtistasCard = (props) => {
     let { nombre, imagen } = props.data
     let id = props.data._id
 
-
     return (
         <>        
             <div className='artistas-card'>

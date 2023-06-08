@@ -12,7 +12,7 @@ import {
     MONTH_NAMES,
     WEEKDAY_NAMES,
     PRESENT_MONTH
-} from '../../misc/consts';
+} from '../../misc/agenda-consts';
 import {
     getAppointments,
     getArtistas,
