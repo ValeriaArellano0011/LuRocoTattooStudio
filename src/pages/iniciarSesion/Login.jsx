@@ -14,21 +14,22 @@ const Login = () => {
     const onSubmitLogin = (e) => {
         e.preventDefault()
         dispatch(login(email, password))
-       navigate('/')
+        navigate('/')
     }
 
     return (
         <main className='container-login'>
-            <h1 className='iniciarSesion_h1'>Iniciar Sesion</h1>
             <form>
+                <h1 className='iniciarSesion_h1'>Iniciar Sesión</h1>
+                <LoginWithGoogle/>
                 <input type="text" placeholder='email' onChange={(e) => setEmail(e.target.value)}/>
                 <input type="password" placeholder='contraseña' onChange={(e) => setPassword(e.target.value)}/>
-                <button type='submit' onClick={e => onSubmitLogin(e)}>Iniciar Sesión</button>
+                <button type='submit' className='btn_submit' onClick={e => onSubmitLogin(e)}>Iniciar Sesión</button>
             </form>
             <div className='p_link_container'>
-                <LoginWithGoogle />
-                <p className='iniciarSesion_p'>No tenes una cuenta?</p>
-                <Link to="/signup"  id='linkRouter_iniciarSesion' style={{textDecoration: 'none'}}>Registrate gratis</Link>
+                <p className='iniciarSesion_p'>No tenes una cuenta?
+                <Link to="/signup" className='btn_submit_secundary' style={{textDecoration: 'underline', marginBottom:'50px'}}>Registrate gratis</Link>
+                </p>
             </div>
         </main>
     )

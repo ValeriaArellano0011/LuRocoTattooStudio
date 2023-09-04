@@ -6,6 +6,7 @@ import {
     LOGIN, 
     POST_TATTOOS, 
     SIGNUP, 
+    LOGIN_GOOGLE,
     UPDATE_USER_PHOTO, 
     GET_TATTOS_BY_ARTIST,
     NEW_ARTIST,
@@ -20,19 +21,23 @@ import {
     CREATE_APPOINTMENT,
     GET_APPOINTMENTS,
     GET_NAV_STATE,
-    CONTENT_TYPE
+    CONTENT_TYPE,
+    GET_USER,
+    LOGOUT
 } from '../misc/redux-consts'
+
+const accesstoken = localStorage.getItem('token');
 
 export async function googleAuth() {
     return await axios.get(`${URL_API}/auth/google`)
 }
 
-export function loginWithGoogle(accessToken) {
+export function loginWithGoogle(token) {
     return async function (dispatch) {
-        await axios.post(`${URL_API}/auth/loginwithgoogle`, { accessToken })
+        await axios.post(`${URL_API}/auth/loginwithgoogle`, { token })
             .then(res => {
                 dispatch({
-                    type: LOGIN,
+                    type: LOGIN_GOOGLE,
                     payload: res.data
                 })
             })
@@ -44,7 +49,7 @@ export function loginWithGoogle(accessToken) {
 
 export const signup = (name, lastname, email, password) => async (dispatch) => {
     try {
-        const response = await axios.post(`${URL_API}/auth/signup`, {
+        const response = await axios.post(`${URL_API}/auth/signup/inner`, {
             name,
             lastname,
             email,
@@ -66,8 +71,43 @@ export function login(email, password) {
         await axios.post(`${URL_API}/auth/login`, { email, password })
             .then(res => {
                 console.log(res.data)
+                localStorage.setItem('token', res.data)
                 dispatch({
                     type: LOGIN,
+                    payload: res.data
+                })
+                getUser(res.data)
+            })
+            .catch((e) => {
+                console.log(e);
+            })
+    }
+}
+
+export function logout() {
+    return async function (dispatch) {
+        try {
+            localStorage.removeItem('token')
+            dispatch({
+                type: LOGOUT
+            })
+        } catch (error) {
+            console.log(error)
+        } 
+    }
+}
+
+export function getUser(token) {
+    console.log('el token: ', token)
+    return async function (dispatch) {
+        await axios.post(`${URL_API}/auth/getuserbytoken`,{}, {
+            headers: {
+              Authorization: `${token}`
+            }
+        })
+            .then(res => {
+                dispatch({
+                    type: GET_USER,
                     payload: res.data
                 })
             })
@@ -98,7 +138,7 @@ export function uploadMyTattoos(formData) {
     return async function (dispatch) {
         await axios.post(`${URL_API}/tatuajes/uploadmytattoos`, formData,
             { headers: CONTENT_TYPE })
-            .then(res => {
+            .then(() => {
                 dispatch({
                     type: POST_TATTOOS
                 })

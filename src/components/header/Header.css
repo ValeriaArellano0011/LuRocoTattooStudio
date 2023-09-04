@@ -20,12 +20,12 @@
 }
 
 header{
-    height: auto;
+    height: 72px;
     width: 100%;
     margin: 0;
     padding: 0;
     padding-left: 40px;
-    padding-right: 10px;
+    padding-right: 40px;
     margin-left: 0px;
     background-color: #171717d8;
     backdrop-filter: blur(10px);
@@ -34,7 +34,6 @@ header{
     justify-content: space-between;
     position: relative;
     border-radius: 12px;
-    height: 72px;
 }
 
 .header-h1{
@@ -126,14 +125,25 @@ header{
 }
 
 .ingresar_btn{
-    padding: 10px;
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 10px;
     font-weight: 800;
     transition: .5s;
+    font-size: 15px;
+    filter: grayscale(.5);
+    background-color: var(--color-primary);
+    color: white;
+    height: 40px;
+}
+
+.ingresar_btn:hover{
+    filter: grayscale(.4);
 }
 
 .user_picture{
-    height: 8vh;
+    height: 50px;
     border-radius: 50px;
 }
 
@@ -152,7 +162,6 @@ header{
 }
 
 .dropdown{
-    margin-right: -60px;
     width: auto;
     align-items: flex-end;
 }

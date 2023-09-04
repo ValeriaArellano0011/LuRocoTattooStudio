@@ -1,3 +1,4 @@
+export const LOGIN_GOOGLE = 'LOGIN_GOOGLE';
 export const LOGIN = 'LOGIN';
 export const SIGNUP = 'SIGNUP';
 export const UPDATE_USER_PHOTO = 'UPDATE_USER_PHOTO';
@@ -18,5 +19,8 @@ export const RESET_JOBS = 'RESET_JOBS';
 export const CREATE_APPOINTMENT = 'CREATE_APPOINTMENT';
 export const GET_APPOINTMENTS = 'GET_APPOINTMENTS';
 export const GET_NAV_STATE = 'GET_NAV_STATE';
+export const GET_USER = 'GET_USER';
+export const LOGOUT = 'LOGOUT';
 
 export const CONTENT_TYPE = { 'Content-Type': 'multipart/form-data' }
+

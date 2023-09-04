@@ -28,8 +28,6 @@ const Main = () => {
                                 </LinkRouter>
                             </div>
                         </div>
-
-                        <div className='separador'></div>
                         <div className='img_container'>
                             <div className='productos'>
                                 <LinkRouter to={'/productos'}>
@@ -40,8 +38,6 @@ const Main = () => {
                                 </LinkRouter>
                             </div>
                         </div>
-                        <div className='separador'></div>
-
                         <div className='img_container'>
                             <div className='cursos'>
                                 <LinkRouter to={'/cursos'}>
@@ -54,7 +50,7 @@ const Main = () => {
                         </div>
                     </ul>
 
-                    <div className='separador'></div>
+                    <div className='separador'/>
 
                     <div className='mapa'>
                         <h2 className='mapa_h2'>Donde encontrarnos 🌎</h2>

@@ -53,17 +53,20 @@
     width: 50%;
 }
 
+
+
 .mas{
-    background-color: rgba(151, 151, 151, 0.445);
     color: white;
     padding: 15px 25px;
     border-radius: 10px;
     font-size: 1.5rem;
+    transition: .3s;
+    background-color: var(--color-primary);
+    filter: grayscale(.6);
 }
 
 .mas:hover{
-    background-color: rgb(151, 151, 151);
-    color: black;
+    filter: grayscale(.5);
 }
 
 .separador{

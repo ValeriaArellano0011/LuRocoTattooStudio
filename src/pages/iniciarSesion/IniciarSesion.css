@@ -1,7 +1,8 @@
 .iniciarSesion_h1 {
     text-align: center;
-    color: white;
+    color: black;
     margin-bottom: 10px;
+    font-size: 30px;
 }
 .container-login{
     padding-top: 10rem;
@@ -12,6 +13,11 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+form{
+    background-color: white;
+    width: 350px;
 }
 
 .iniciarSesion_p {
@@ -36,7 +42,8 @@
 }
 
 .loader-container{
-    padding-top: calc(50vh - 15vh - 60px);
+    padding-top: 100px;
+    min-height: 100vh;
 }
 
 .loader {
@@ -49,16 +56,63 @@
     height: 120px;
 }
 
+.btn_submit{
+    padding: 10px 20px;
+    filter: grayscale(.3);
+    background-color: var(--button-background-primary);
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.btn_submit:hover,
+.btn_submit_secundary:hover{
+    filter: grayscale(.1);
+}
+
+.btn_submit_secundary:hover{
+    color: rgb(202, 175, 106);
+}
+
+.btn_submit_secundary{
+    padding: 10px 20px;
+    filter: grayscale(.3);
+    background-color: var(--button-background-secundary);
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: .5s;
+    color: goldenrod;
+}
+
+:link{
+    text-decoration: none;
+}
+
+.btn_submit:hover{
+    filter: grayscale(.1);
+}
+
 .loader img{
     width: 120px;
     height: 120px;
 }
+
+input{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(194, 194, 194);
+    width: 280px;
+}
   
-  @keyframes spin {
-    from {
-      transform: scale(1) rotate(0deg);
-    }
-    to {
-      transform: scale(1) rotate(360deg);
-    }
-  }
+@keyframes spin {
+from {
+    transform: scale(1) rotate(0deg);
+}
+to {
+    transform: scale(1) rotate(360deg);
+}
+}

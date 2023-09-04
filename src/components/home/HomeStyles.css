@@ -82,12 +82,12 @@
 }
 
 .main-h1{
-  color: #c93384;
+  color: var(--color-primary);
   text-align: center;
 }
 
 .main-h4{
-  color: #c93384;
+  color: var(--color-primary);
   text-align: center;
 }
 
@@ -205,11 +205,13 @@
 
 .banner{
   transition: .3s;
-  background-color: #c93383c4;
+  background-color: var(--button-background-primary);
+  filter: grayscale(.3);
 }
 
 .banner:hover{
   backdrop-filter: blur(10px);
+  filter: grayscale(.1);
 }
 
 

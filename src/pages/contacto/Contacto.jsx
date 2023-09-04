@@ -29,14 +29,14 @@ const Contacto = () => {
         };
     return (
         <main className='container-contact'>
-            <h2 className='contacto_h2'>Contáctanos</h2>
             <div>
                 <form ref={form} onSubmit={sendEmail}>
+                    <h2 className='contacto_h2'>Contáctanos</h2>
                     <input type="text" className='input_contacto' name='name' placeholder='Nombre' required/>
                     <input type="text" className='input_contacto' name='lastName' placeholder='Apellido' required />
                     <input type="text" className='input_contacto' name='email' placeholder='tuemail@algo.com' required/>
                     <textarea name="message" cols="30" rows="10" placeholder='Tu mensaje acá...' required></textarea>
-                    <button type='submit' className='btn_contacto'>Enviar</button>
+                    <button type='submit' className='btn_submit'>Enviar</button>
                 </form>
             </div>
         </main>

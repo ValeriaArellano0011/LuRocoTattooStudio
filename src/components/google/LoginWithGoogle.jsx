@@ -4,14 +4,12 @@ import './loginwithgoogle.css';
 
 export default function LoginWithGoogle() {
     return (
-        <div>
-
-            <a
-                className="a-login"
-                href={`https://lurocotattoo.fly.dev/auth/google`}>
-                <FcGoogle />
+        <div className="googleLoginContainer">
+            <a className="a-login" href={`http://localhost:3000/auth/google/signup`}>
+                <div className="iconCont">
+                    Entrar con Google <FcGoogle/>
+                </div>
             </a>
-
         </div>
     );
 }

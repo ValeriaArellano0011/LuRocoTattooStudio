@@ -1,8 +1,8 @@
-import { 
-    GET_ARTIST, 
-    GET_ARTISTS, 
-    LOGIN, 
-    UPDATE_USER_PHOTO, 
+import {
+    GET_ARTIST,
+    GET_ARTISTS,
+    LOGIN,
+    UPDATE_USER_PHOTO,
     GET_TATTOS_BY_ARTIST,
     NEW_ARTIST,
     DELETE_ARTIST,
@@ -14,10 +14,15 @@ import {
     RESET_JOBS,
     CREATE_APPOINTMENT,
     GET_APPOINTMENTS,
-    GET_NAV_STATE
+    GET_NAV_STATE,
+    GET_USER,
+    LOGOUT,
+    LOGIN_GOOGLE
+
 } from '../misc/redux-consts'
 
 const initialState = {
+    token: false,
     currentUser: false,
     artists: [],
     artist: {},
@@ -32,13 +37,26 @@ const initialState = {
 export default function rootReducer(state = initialState, action) {
 
     switch (action.type) {
-
-        case LOGIN:
+        case LOGIN_GOOGLE:
             return {
                 ...state,
                 currentUser: action.payload
             };
-
+        case LOGIN:
+            return {
+                ...state,
+                token: action.payload
+            };
+        case LOGOUT:
+            return {
+                ...state,
+                token: null
+            };
+        case GET_USER:
+            return {
+                ...state,
+                currentUser: action.payload
+            }
         case UPDATE_USER_PHOTO:
             return {
                 ...state,
