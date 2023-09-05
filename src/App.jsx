@@ -19,8 +19,10 @@ import AuthGToken from './pages/iniciarSesion/AuthGToken';
 import VerifyEmail from './pages/iniciarSesion/VerifyEmail';
 import AdminProfile from './pages/admin/AdminProfile';
 import { ToTopButton } from './components/utils/buttons/ToTopButton';
+import { environment } from './environments';
 
 const App = () => {
+  console.log(environment)
   return (
     <div className='App'>
       <BrowserRouter>
@@ -41,8 +43,8 @@ const App = () => {
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/auth' element={<AuthGToken/>}/>
               <Route path='/verifyemail' element={<VerifyEmail/>}/>
-              </Routes>
-              <ToTopButton/>            
+            </Routes>
+            <ToTopButton/>            
           </Layout>
       </BrowserRouter>
     </div>

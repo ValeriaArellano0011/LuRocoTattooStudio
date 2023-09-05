@@ -1,3 +1,4 @@
+export const DEVELOPMENT = 'DEVELOPMENT';
 export const LOGIN_GOOGLE = 'LOGIN_GOOGLE';
 export const LOGIN = 'LOGIN';
 export const SIGNUP = 'SIGNUP';

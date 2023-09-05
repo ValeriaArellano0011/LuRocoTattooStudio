@@ -71,7 +71,7 @@ export function login(email, password) {
         await axios.post(`${URL_API}/auth/login`, { email, password })
             .then(res => {
                 console.log(res.data)
-                localStorage.setItem('token', res.data)
+                localStorage.setItem('accessToken', res.data)
                 dispatch({
                     type: LOGIN,
                     payload: res.data
